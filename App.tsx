@@ -1,21 +1,29 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import styled from "@emotion/native";
+import { StatusBar } from "expo-status-bar";
+import { ThemeProvider } from "@emotion/react";
+
+import theme from "./src/constants/Theme";
+import ResourceLoader from "./src/utils/ResourceLoader";
+import SearchScreen from "./src/screens/Search";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <ResourceLoader>
+      <ThemeProvider theme={theme}>
+        {/* eslint-disable-next-line react/style-prop-object */}
+        <StatusBar style="auto" animated={true} />
+        <AppContainer>
+          <SearchScreen />
+        </AppContainer>
+      </ThemeProvider>
+    </ResourceLoader>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+const AppContainer = styled.View`
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background-color: ${({ theme }) => theme.BackgroundMain};
+`;

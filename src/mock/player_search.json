@@ -1,0 +1,318 @@
+{
+  "items": [
+    {
+      "player_id": "4946fdbd-00e9-4408-91dd-6f3c87c39b23",
+      "nickname": "JW",
+      "status": "BUSY",
+      "games": [
+        {
+          "name": "csgo",
+          "skill_level": "10"
+        },
+        {
+          "name": "csdz",
+          "skill_level": "3"
+        }
+      ],
+      "country": "SE",
+      "verified": true,
+      "avatar": "https://assets.faceit-cdn.net/avatars/4946fdbd-00e9-4408-91dd-6f3c87c39b23_1582047085857.jpg"
+    },
+    {
+      "player_id": "244e0b78-b856-4501-8d0a-bbc40d4fc550",
+      "nickname": "JW-JW",
+      "status": "AVAILABLE",
+      "games": [
+        {
+          "name": "csgo",
+          "skill_level": "4"
+        },
+        {
+          "name": "rl_XBOX_PC",
+          "skill_level": "1"
+        },
+        {
+          "name": "rocket_league",
+          "skill_level": "1"
+        }
+      ],
+      "country": "RU",
+      "verified": false,
+      "avatar": "https://assets.faceit-cdn.net/avatars/244e0b78-b856-4501-8d0a-bbc40d4fc550_1551043357655.jpg"
+    },
+    {
+      "player_id": "4fc0b806-f206-47d8-995a-0d8cbfd3f518",
+      "nickname": "JW--__--",
+      "status": "AVAILABLE",
+      "games": [
+        {
+          "name": "csgo",
+          "skill_level": "5"
+        },
+        {
+          "name": "valorant",
+          "skill_level": "3"
+        },
+        {
+          "name": "csdz",
+          "skill_level": "3"
+        },
+        {
+          "name": "brawl_stars",
+          "skill_level": "3"
+        }
+      ],
+      "country": "KZ",
+      "verified": false,
+      "avatar": "https://assets.faceit-cdn.net/avatars/4fc0b806-f206-47d8-995a-0d8cbfd3f518_1605037553339.jpg"
+    },
+    {
+      "player_id": "8c1380a0-2848-45ae-bd99-5f2a46c17bd4",
+      "nickname": "JW--",
+      "status": "AVAILABLE",
+      "games": [
+        {
+          "name": "csgo",
+          "skill_level": "3"
+        }
+      ],
+      "country": "RU",
+      "verified": false,
+      "avatar": "https://assets.faceit-cdn.net/avatars/8c1380a0-2848-45ae-bd99-5f2a46c17bd4_1550894150630.png"
+    },
+    {
+      "player_id": "0c2d0af0-4355-4ec4-85ec-d51203b5e4fd",
+      "nickname": "JW---",
+      "status": "AVAILABLE",
+      "games": [
+        {
+          "name": "csgo",
+          "skill_level": "10"
+        }
+      ],
+      "country": "BA",
+      "verified": false,
+      "avatar": "https://assets.faceit-cdn.net/avatars/0c2d0af0-4355-4ec4-85ec-d51203b5e4fd_1576181753474.jpg"
+    },
+    {
+      "player_id": "563e85a3-1d50-4696-a422-4a9fb387f127",
+      "nickname": "jW",
+      "status": "AVAILABLE",
+      "games": [
+        {
+          "name": "csgo",
+          "skill_level": "2"
+        }
+      ],
+      "country": "DZ",
+      "verified": false,
+      "avatar": ""
+    },
+    {
+      "player_id": "34ddabed-bb6e-4814-96c0-c7b547d94fe5",
+      "nickname": "-JW",
+      "status": "AVAILABLE",
+      "games": [
+        {
+          "name": "csgo",
+          "skill_level": "5"
+        }
+      ],
+      "country": "SE",
+      "verified": false,
+      "avatar": "https://assets.faceit-cdn.net/avatars/34ddabed-bb6e-4814-96c0-c7b547d94fe5_1550619506460.png"
+    },
+    {
+      "player_id": "e2b4d51d-0681-42f2-9f7a-e026daa6d4a6",
+      "nickname": "-JW-",
+      "status": "AVAILABLE",
+      "games": [
+        {
+          "name": "csgo",
+          "skill_level": "2"
+        }
+      ],
+      "country": "RU",
+      "verified": false,
+      "avatar": ""
+    },
+    {
+      "player_id": "8ea275fb-10b2-42e6-a4c7-d745823052d7",
+      "nickname": "| JW |",
+      "status": "AVAILABLE",
+      "games": [
+        {
+          "name": "csgo",
+          "skill_level": "1"
+        },
+        {
+          "name": "dota2",
+          "skill_level": "2"
+        }
+      ],
+      "country": "SE",
+      "verified": false,
+      "avatar": "https://assets.faceit-cdn.net/avatars/8ea275fb-10b2-42e6-a4c7-d745823052d7_1550845943574.png"
+    },
+    {
+      "player_id": "169fdff8-f503-4cc3-b48f-934ee6d7275e",
+      "nickname": "JW Oj",
+      "status": "AVAILABLE",
+      "games": [
+        {
+          "name": "csgo",
+          "skill_level": "3"
+        }
+      ],
+      "country": "RU",
+      "verified": false,
+      "avatar": ""
+    },
+    {
+      "player_id": "206492ff-e4ed-435b-ad2b-059fba34e695",
+      "nickname": "JW-GOD",
+      "status": "AVAILABLE",
+      "games": [
+        {
+          "name": "csgo",
+          "skill_level": "1"
+        }
+      ],
+      "country": "BY",
+      "verified": false,
+      "avatar": ""
+    },
+    {
+      "player_id": "04af8314-fffc-4dad-a12f-fa8b7066b569",
+      "nickname": "JW-glm",
+      "status": "AVAILABLE",
+      "games": [
+        {
+          "name": "csgo",
+          "skill_level": "2"
+        }
+      ],
+      "country": "DE",
+      "verified": false,
+      "avatar": ""
+    },
+    {
+      "player_id": "a9b20539-5fa1-4629-8bd5-baba31144d61",
+      "nickname": "JW-F",
+      "status": "AVAILABLE",
+      "games": [
+        {
+          "name": "csgo",
+          "skill_level": "4"
+        }
+      ],
+      "country": "BR",
+      "verified": false,
+      "avatar": ""
+    },
+    {
+      "player_id": "7b4254b5-d1de-49a6-b86e-389dfff41bce",
+      "nickname": "JW-GOD-_-",
+      "status": "AVAILABLE",
+      "games": [
+        {
+          "name": "csgo",
+          "skill_level": "2"
+        }
+      ],
+      "country": "BY",
+      "verified": false,
+      "avatar": ""
+    },
+    {
+      "player_id": "7d3d669c-86af-4326-b437-61da09728806",
+      "nickname": "JW-BRACHO",
+      "status": "AVAILABLE",
+      "games": [
+        {
+          "name": "csgo",
+          "skill_level": "3"
+        }
+      ],
+      "country": "RU",
+      "verified": false,
+      "avatar": ""
+    },
+    {
+      "player_id": "5c998558-0346-4de4-b2f4-789a4126e34c",
+      "nickname": "JW-W",
+      "status": "AVAILABLE",
+      "games": [
+        {
+          "name": "csgo",
+          "skill_level": "4"
+        }
+      ],
+      "country": "SE",
+      "verified": false,
+      "avatar": ""
+    },
+    {
+      "player_id": "ef262672-2c5a-41c8-ad42-c7d817c12b41",
+      "nickname": "JW-Kuro",
+      "status": "AVAILABLE",
+      "games": [
+        {
+          "name": "csgo",
+          "skill_level": "3"
+        }
+      ],
+      "country": "KR",
+      "verified": false,
+      "avatar": ""
+    },
+    {
+      "player_id": "84e3d258-2d89-4eeb-a6d1-da6f5fb2c653",
+      "nickname": "JW-chq",
+      "status": "AVAILABLE",
+      "games": [
+        {
+          "name": "csgo",
+          "skill_level": "2"
+        }
+      ],
+      "country": "CA",
+      "verified": false,
+      "avatar": ""
+    },
+    {
+      "player_id": "69af7783-e152-4ae9-bb59-026cfebb173b",
+      "nickname": "JW-Brollan",
+      "status": "AVAILABLE",
+      "games": [
+        {
+          "name": "csgo",
+          "skill_level": "1"
+        }
+      ],
+      "country": "BG",
+      "verified": false,
+      "avatar": ""
+    },
+    {
+      "player_id": "833365a3-7e6d-4dff-aafd-da23172aa83a",
+      "nickname": "JW-iwnl",
+      "status": "AVAILABLE",
+      "games": [
+        {
+          "name": "csgo",
+          "skill_level": "5"
+        },
+        {
+          "name": "csdz",
+          "skill_level": "3"
+        }
+      ],
+      "country": "CN",
+      "verified": false,
+      "avatar": "https://assets.faceit-cdn.net/avatars/833365a3-7e6d-4dff-aafd-da23172aa83a_1598327773641.jpg"
+    }
+  ],
+  "start": 0,
+  "end": 20
+}

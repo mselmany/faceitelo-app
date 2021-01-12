@@ -1,6 +1,7 @@
 {
   "expo": {
-    "name": "faceitelo-app",
+    "name": "Felo",
+    "description": "Faceit statictsics",
     "slug": "faceitelo-app",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -13,9 +14,7 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
@@ -27,6 +26,9 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "experiments": {
+      "turboModules": true
     }
   }
 }
