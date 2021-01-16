@@ -5,7 +5,7 @@ import { ThemeProvider } from "@emotion/react";
 
 import theme from "./src/constants/Theme";
 import ResourceLoader from "./src/utils/ResourceLoader";
-import Screens from "./src/screens";
+import Navigations from "./src/screens";
 
 export default function App() {
   return (
@@ -14,7 +14,7 @@ export default function App() {
         {/* eslint-disable-next-line react/style-prop-object */}
         <StatusBar style="auto" animated={true} />
         <AppContainer>
-          <Screens />
+          <Navigations />
         </AppContainer>
       </ThemeProvider>
     </ResourceLoader>

@@ -1,6 +1,10 @@
 import styled from "@emotion/native";
+import { Dimensions } from "react-native";
 
 import { FontSize, FontFamily, Space, Opacity } from "../../constants/System";
+import { TouchableBox } from "../../shareds/Base";
+
+const { height } = Dimensions.get("window");
 
 export const Container = styled.View`
   display: flex;
@@ -14,8 +18,8 @@ export const HeadAndVersion = styled.View`
   flex-direction: row;
 `;
 
-export const Title = styled.Text<{ toggled: boolean }>`
-  font-size: ${(props) => (props.toggled ? "16" : "60")}px;
+export const Title = styled.Text`
+  font-size: 16px;
   font-family: ${FontFamily.Prompt};
 `;
 
@@ -45,4 +49,9 @@ export const VersionText = styled.Text`
 
 export const VersionTextOpac = styled.Text`
   opacity: ${Opacity.a50};
+`;
+
+export const Box = styled(TouchableBox)`
+  height: ${height.toString()}px;
+  margin: 0 ${Space.screenPadding}px;
 `;

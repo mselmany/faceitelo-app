@@ -3,7 +3,7 @@ import Constants from "expo-constants";
 
 import { Space } from "../../constants/System";
 
-export { default as Status } from "./Head";
+// export { default as Status } from "./Head";
 
 export const Wrapper = styled.SafeAreaView`
   display: flex;

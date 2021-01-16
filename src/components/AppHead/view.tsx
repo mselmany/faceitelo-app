@@ -1,18 +1,19 @@
 import React, { memo } from "react";
+import { SharedElement } from "react-navigation-shared-element";
 
 import appJson from "../../../app.json";
 
 import * as s from "./styles";
 
-import { ViewProps } from ".";
-
 const { version, name, description } = appJson.expo;
 
-function View(p: ViewProps) {
+function View(p) {
   return (
-    <s.Container style={p.fadeOutStyle}>
+    <s.Container>
       <s.HeadAndVersion>
-        <s.Title>{name}</s.Title>
+        <SharedElement id="title">
+          <s.Title toggled={p.toggle}>{name}</s.Title>
+        </SharedElement>
         <s.Version>
           <s.VersionText>
             Beta <s.VersionTextOpac>{version}</s.VersionTextOpac>
