@@ -12,6 +12,9 @@
     "@emotion/core": "^11.0.0",
     "@emotion/native": "^11.0.0",
     "@emotion/react": "^11.1.4",
+    "@react-native-community/masked-view": "0.1.10",
+    "@react-navigation/native": "^5.8.10",
+    "@react-navigation/stack": "^5.12.8",
     "axios": "^0.21.1",
     "expo": "~40.0.0",
     "expo-app-loading": "^1.0.1",
@@ -26,7 +29,13 @@
     "react-native-gesture-handler": "~1.8.0",
     "react-native-reanimated": "^2.0.0-rc.0",
     "react-native-redash": "^16.0.5",
-    "react-native-web": "~0.13.12"
+    "react-native-safe-area-context": "3.1.9",
+    "react-native-screens": "~2.15.0",
+    "react-native-shared-element": "^0.7.0",
+    "react-native-web": "~0.13.12",
+    "react-navigation": "^4.4.3",
+    "react-navigation-shared-element": "^3.0.0",
+    "react-navigation-stack": "^2.10.2"
   },
   "devDependencies": {
     "@babel/core": "~7.9.0",

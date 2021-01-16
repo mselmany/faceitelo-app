@@ -1,4 +1,4 @@
-import React, { SetStateAction, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "@emotion/native";
 
 import AppHead from "../components/AppHead";
@@ -9,7 +9,7 @@ import * as Screen from "../shareds/Screen";
 import PlayerBoxList from "../components/PlayerBoxList";
 import { IPlayer } from "../types";
 
-export default function SearchScreen() {
+export default () => {
   const [players, setPlayers] = useState<IPlayer[]>();
 
   useEffect(() => {
@@ -35,7 +35,7 @@ export default function SearchScreen() {
       </Screen.Content>
     </Screen.Wrapper>
   );
-}
+};
 
 const Footer = styled.View`
   margin-top: auto;
