@@ -9,17 +9,15 @@ import { ViewProps } from "./index";
 
 function View(p: ViewProps) {
   return (
-    <Animated.View style={p.toggleStyle}>
-      <s.Box onPress={() => p.setToggle((prev) => !prev)}>
-        <Base.BoxLine>
-          <Base.Label>Search</Base.Label>
-        </Base.BoxLine>
-        <Base.Seperator />
-        <Base.BoxLine>
-          <Base.Head>Search by nickname</Base.Head>
-        </Base.BoxLine>
-      </s.Box>
-    </Animated.View>
+    <s.Box onPress={() => p.openSearch()}>
+      <Base.BoxLine>
+        <Base.Label>Search</Base.Label>
+      </Base.BoxLine>
+      <Base.Seperator />
+      <Base.BoxLine>
+        <Base.Head>Search by nickname</Base.Head>
+      </Base.BoxLine>
+    </s.Box>
   );
 }
 

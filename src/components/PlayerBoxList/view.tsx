@@ -16,7 +16,6 @@ function View(p: ViewProps) {
       <s.Scroll
         horizontal
         showsHorizontalScrollIndicator={false}
-        pagingEnabled
         data={p.players}
         keyExtractor={(item: any) => item.player_id}
         renderItem={({ item, index }: ListRenderItemInfo<any>) => (

@@ -1,19 +1,13 @@
 import styled from "@emotion/native";
 
 import { FontSize, FontFamily, Space, Opacity } from "../../constants/System";
-import { TouchableBox } from "../../shareds/Base";
+import * as Base from "../../shareds/Base";
 
-export const Container = styled.View`
-  display: flex;
-  flex-direction: column;
-  margin-bottom: ${Space.xlarge}px;
-`;
-
-export const Box = styled(TouchableBox)`
+export const Box = styled(Base.PressableBox)`
   display: flex;
   flex-direction: column;
   width: 180px;
-  margin-left: ${({ index }: { index: number }) => (index === 0 ? Space.xlarge : Space.normal)}px;
+  margin-left: ${Space.normal}px;
 `;
 
 export const Infos = styled.View`

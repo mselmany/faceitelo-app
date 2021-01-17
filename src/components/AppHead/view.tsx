@@ -4,13 +4,11 @@ import appJson from "../../../app.json";
 
 import * as s from "./styles";
 
-import { ViewProps } from ".";
-
 const { version, name, description } = appJson.expo;
 
-function View(p: ViewProps) {
+function View(p) {
   return (
-    <s.Container style={p.fadeOutStyle}>
+    <s.Container>
       <s.HeadAndVersion>
         <s.Title>{name}</s.Title>
         <s.Version>

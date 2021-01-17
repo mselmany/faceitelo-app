@@ -8,7 +8,7 @@ import { IPlayerBox } from ".";
 
 function View(p: IPlayerBox) {
   return (
-    <s.Box {...p} onPress={p.onPress}>
+    <s.Box onPress={p.onPress}>
       <s.Infos>
         <s.Info>Level {p.skill_level}</s.Info>
         {p.verified && (
@@ -24,7 +24,7 @@ function View(p: IPlayerBox) {
         />
       </s.Infos>
       <Base.Seperator />
-      <s.Name>{p.nickname}</s.Name>
+      <s.Name numberOfLines={1}>{p.nickname}</s.Name>
     </s.Box>
   );
 }

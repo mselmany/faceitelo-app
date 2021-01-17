@@ -10,7 +10,7 @@ export const Container = styled.View`
 
 export const Label = styled(_Label)`
   display: flex;
-  margin-left: ${Space.xlarge}px;
+  margin-left: ${Space.screenPadding}px;
   margin-bottom: ${Space.small}px;
 `;
 

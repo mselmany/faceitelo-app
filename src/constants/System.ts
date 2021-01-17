@@ -9,7 +9,7 @@ export const Space = {
   medium: s(SPACE * 1.25),
   large: s(SPACE * 1.5),
   xlarge: s(SPACE * 2),
-  screenPadding: s(SPACE * 2),
+  screenPadding: s(SPACE),
 };
 
 export const FontSize = {

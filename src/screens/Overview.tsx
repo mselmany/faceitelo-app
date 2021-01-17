@@ -24,9 +24,14 @@ export default () => {
 
   return (
     <Screen.Wrapper>
-      <Screen.Status />
+      <Screen.Status {...{ toggle }} />
       <Screen.Content>
-        <SearchBox isActive {...{ toggle, setToggle }} />
+        <AppHead {...{ toggle }} />
+        <SearchBox {...{ toggle, setToggle }} />
+        <Footer>
+          <PlayerList label="Favorites" players={players} />
+          <PlayerList label="Recent Searches" players={players} />
+        </Footer>
       </Screen.Content>
     </Screen.Wrapper>
   );

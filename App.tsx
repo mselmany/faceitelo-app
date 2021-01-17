@@ -1,3 +1,4 @@
+import "react-native-gesture-handler";
 import React from "react";
 import styled from "@emotion/native";
 import { StatusBar } from "expo-status-bar";
@@ -5,7 +6,7 @@ import { ThemeProvider } from "@emotion/react";
 
 import theme from "./src/constants/Theme";
 import ResourceLoader from "./src/utils/ResourceLoader";
-import SearchScreen from "./src/screens/Search";
+import Navigations from "./src/screens";
 
 export default function App() {
   return (
@@ -14,7 +15,7 @@ export default function App() {
         {/* eslint-disable-next-line react/style-prop-object */}
         <StatusBar style="auto" animated={true} />
         <AppContainer>
-          <SearchScreen />
+          <Navigations />
         </AppContainer>
       </ThemeProvider>
     </ResourceLoader>

@@ -1,13 +1,11 @@
 import styled from "@emotion/native";
-import Animated from "react-native-reanimated";
 
 import { FontSize, FontFamily, Space, Opacity } from "../../constants/System";
 
-export const Container = styled(Animated.View)`
+export const Container = styled.View`
   display: flex;
   flex-direction: column;
-  padding: ${Space.screenPadding}px;
-  padding-top: 0;
+  padding: ${(+Space.screenPadding * 2).toString()}px;
 `;
 
 export const HeadAndVersion = styled.View`
