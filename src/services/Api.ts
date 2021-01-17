@@ -1,4 +1,4 @@
-import { IPlayer } from "../types";
+import { IPlayer } from "../typings/types";
 import player_search from "../mock/player_search.json";
 
 class Api {

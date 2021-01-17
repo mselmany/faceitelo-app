@@ -7,7 +7,7 @@ import Api from "../services/Api";
 import { Space } from "../constants/System";
 import * as Screen from "../shareds/Screen";
 import PlayerBoxList from "../components/PlayerBoxList";
-import { IPlayer } from "../types";
+import { IPlayer } from "../typings/types";
 
 export default () => {
   const [players, setPlayers] = useState<IPlayer[]>();

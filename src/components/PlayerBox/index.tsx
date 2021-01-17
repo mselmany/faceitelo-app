@@ -1,6 +1,6 @@
 import React, { memo } from "react";
 
-import { IPlayer } from "../../types";
+import { IPlayer } from "../../typings/types";
 
 import View from "./view";
 

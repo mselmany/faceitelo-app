@@ -1,6 +1,5 @@
-import React, { memo, useEffect } from "react";
+import React, { memo } from "react";
 import styled from "@emotion/native";
-import Animated, { Easing, interpolate, useAnimatedStyle, useSharedValue, withTiming } from "react-native-reanimated";
 
 import { Space, FontFamily } from "../../constants/System";
 import appJson from "../../../app.json";

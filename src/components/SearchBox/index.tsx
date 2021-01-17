@@ -1,26 +1,50 @@
-import { useNavigation } from "@react-navigation/native";
-import React, { useCallback } from "react";
+import React, { useCallback, useEffect, useState } from "react";
+
+import Api from "../../services/Api";
+import { IPlayer } from "../../typings/types";
 
 import View from "./view";
 
 interface Props {
-  isActive?: boolean;
+  isFocused?: boolean;
 }
 
 export interface ViewProps extends Props {
-  openSearch: () => void;
+  list: IPlayer[];
+  text?: string;
+  onSearch: () => void;
+  onChangeText: () => void;
+  onSelect: () => void;
 }
 
 function Controller(p: Props) {
-  const navigation = useNavigation();
+  const [text, onChangeText] = useState("hüsame");
+  const [list, setList] = useState<IPlayer[]>([]);
 
-  const openSearch = useCallback(() => {
-    if (!p.isActive) {
-      navigation.navigate("Search");
-    }
-  }, [p.isActive, navigation]);
+  useEffect(() => {
+    (async () => {
+      const data = await Api.players();
 
-  return <View {...{ ...p, openSearch }} />;
+      setList(data);
+      console.log(data);
+    })();
+  }, []);
+
+  const onSearch = useCallback(() => {}, []);
+  const onSelect = useCallback(() => {}, []);
+
+  return (
+    <View
+      {...{
+        ...p,
+        list,
+        text,
+        onChangeText,
+        onSearch,
+        onSelect,
+      }}
+    />
+  );
 }
 
 export default Controller;

@@ -26,7 +26,7 @@ export const Info = styled.Text`
 
 export const Name = styled.Text`
   font-size: ${FontSize.normal}px;
-  font-family: ${FontFamily.Barlow};
+  font-family: ${FontFamily.Rubik};
 `;
 
 export const Avatar = styled.Image`

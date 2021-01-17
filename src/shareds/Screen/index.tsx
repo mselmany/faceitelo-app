@@ -21,5 +21,5 @@ export const Content = styled.View`
 `;
 
 export const Block = styled.View`
-  padding: 0 ${Space.xlarge}px;
+  padding: 0 ${Space.normal}px;
 `;

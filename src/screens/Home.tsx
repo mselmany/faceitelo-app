@@ -2,12 +2,12 @@ import React, { SetStateAction, useEffect, useState } from "react";
 import styled from "@emotion/native";
 
 import AppHead from "../components/AppHead";
-import SearchBox from "../components/SearchBox";
+import SearchBoxPlaceholder from "../components/SearchBoxPlaceholder";
 import Api from "../services/Api";
 import { Space } from "../constants/System";
 import * as Screen from "../shareds/Screen";
 import PlayerBoxList from "../components/PlayerBoxList";
-import { IPlayer } from "../types";
+import { IPlayer } from "../typings/types";
 
 export default () => {
   const [players, setPlayers] = useState<IPlayer[]>();
@@ -26,7 +26,7 @@ export default () => {
     <Screen.Wrapper>
       <Screen.Content>
         <AppHead />
-        <SearchBox />
+        <SearchBoxPlaceholder />
         <Footer>
           <PlayerList label="Favorites" players={players} />
           <PlayerList label="Recent Searches" players={players} />

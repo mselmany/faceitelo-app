@@ -38,13 +38,13 @@ export const Seperator = styled.View`
 export const Label = styled.Text`
   display: flex;
   font-size: ${FontSize.small}px;
-  font-family: ${FontFamily.BarlowCondensed};
+  font-family: ${FontFamily.Rubik};
   color: ${({ theme }) => theme.Color25};
 `;
 
 export const Head = styled.Text`
   display: flex;
   font-size: ${FontSize.normal}px;
-  font-family: ${FontFamily.Barlow};
+  font-family: ${FontFamily.Rubik};
   color: ${({ theme }) => theme.ColorPrimary};
 `;
