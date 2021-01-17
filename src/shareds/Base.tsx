@@ -12,7 +12,7 @@ export const Box = styled.View`
   border-radius: ${Radius.large}px;
 `;
 
-export const TouchableBox = styled.TouchableOpacity`
+export const PressableBox = styled.Pressable`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
