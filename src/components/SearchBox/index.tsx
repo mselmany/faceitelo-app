@@ -1,7 +1,9 @@
 import React, { useCallback, useEffect, useState } from "react";
+import { useNavigation } from "@react-navigation/native";
 
 import Api from "../../services/Api";
 import { IPlayer } from "../../typings/types";
+import useDebounce from "../../utils/useDebounce";
 
 import View from "./view";
 
@@ -12,26 +14,31 @@ interface Props {
 export interface ViewProps extends Props {
   list: IPlayer[];
   text?: string;
-  onSearch: () => void;
-  onChangeText: () => void;
-  onSelect: () => void;
+  onChangeText: (text: string) => void;
+  onSelect: (user: IPlayer) => void;
 }
 
 function Controller(p: Props) {
-  const [text, onChangeText] = useState("hüsame");
+  const [text, onChangeText] = useState<string>("jw");
   const [list, setList] = useState<IPlayer[]>([]);
+
+  const navigation = useNavigation();
+
+  const debouncedText = useDebounce(text, 300);
 
   useEffect(() => {
     (async () => {
-      const data = await Api.players();
-
-      setList(data);
-      console.log(data);
+      const players = await Api.players(debouncedText);
+      setList(players);
     })();
-  }, []);
+  }, [debouncedText]);
 
-  const onSearch = useCallback(() => {}, []);
-  const onSelect = useCallback(() => {}, []);
+  const onSelect = useCallback(
+    (user: IPlayer) => {
+      navigation.navigate("Overview", user);
+    },
+    [navigation]
+  );
 
   return (
     <View
@@ -40,7 +47,6 @@ function Controller(p: Props) {
         list,
         text,
         onChangeText,
-        onSearch,
         onSelect,
       }}
     />

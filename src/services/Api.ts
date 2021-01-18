@@ -16,12 +16,16 @@ class Api {
     this.player_search = player_search.items;
   }
 
-  async players(): Promise<IPlayer[]> {
-    const players: IPlayer[] = this.player_search.map((player: any) => {
-      const { player_id, nickname, games, country, verified, avatar } = player;
-      const { skill_level } = games.find((item: any) => item.name === "csgo");
-      return { player_id, nickname, skill_level, country, verified, avatar };
-    });
+  async players(_nickname: string | undefined | null): Promise<IPlayer[]> {
+    const players: IPlayer[] = this.player_search
+      .filter((player) =>
+        !_nickname ? true : player.nickname.toLocaleLowerCase("en").includes(_nickname.toLocaleLowerCase("en"))
+      )
+      .map((player: any) => {
+        const { player_id, nickname, games, country, verified, avatar } = player;
+        const { skill_level } = games.find((item: any) => item.name === "csgo");
+        return { player_id, nickname, skill_level, country, verified, avatar };
+      });
     return players;
   }
 }

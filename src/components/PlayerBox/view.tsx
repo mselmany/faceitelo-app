@@ -19,7 +19,7 @@ function View(p: IPlayerBox) {
         )}
         <s.Avatar
           source={{
-            uri: p.avatar,
+            uri: p.avatar || undefined,
           }}
         />
       </s.Infos>

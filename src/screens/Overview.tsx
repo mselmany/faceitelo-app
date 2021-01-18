@@ -28,10 +28,6 @@ export default () => {
       <Screen.Content>
         <AppHead {...{ toggle }} />
         <SearchBox {...{ toggle, setToggle }} />
-        <Footer>
-          <PlayerList label="Favorites" players={players} />
-          <PlayerList label="Recent Searches" players={players} />
-        </Footer>
       </Screen.Content>
     </Screen.Wrapper>
   );

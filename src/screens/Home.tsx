@@ -1,4 +1,4 @@
-import React, { SetStateAction, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "@emotion/native";
 
 import AppHead from "../components/AppHead";
@@ -19,8 +19,6 @@ export default () => {
       setPlayers(data);
     })();
   }, []);
-
-  const [toggle, setToggle] = useState(false);
 
   return (
     <Screen.Wrapper>

@@ -13,7 +13,7 @@ function View(p: ViewProps) {
   return (
     <s.Box>
       <s.BoxLine>
-        <Base.Label>Search {p.list.length ? `• ${123} player found` : ""}</Base.Label>
+        <Base.Label>Search • {p.list.length ? `${p.list.length} players found` : "No player found"}</Base.Label>
       </s.BoxLine>
       <Base.Seperator />
       <s.Input
@@ -23,7 +23,7 @@ function View(p: ViewProps) {
         returnKeyType="search"
         value={p.text}
         onChangeText={p.onChangeText}
-        autoFocus
+        autoFocus={p.isFocused}
         blurOnSubmit
         numberOfLines={1}
       />
@@ -32,10 +32,10 @@ function View(p: ViewProps) {
         data={p.list}
         keyExtractor={(item: IPlayer) => item.player_id}
         renderItem={({ item }) => (
-          <s.ListItem>
+          <s.ListItem onPress={() => p.onSelect(item)}>
             <s.Avatar
               source={{
-                uri: item.avatar,
+                uri: item.avatar || undefined,
               }}
             />
             <s.NameAndInfos>

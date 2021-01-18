@@ -23,10 +23,10 @@ export const Input = styled.TextInput`
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 0 ${Space.normal}px;
+  padding-left: ${Space.normal}px;
   width: 100%;
   font-size: ${FontSize.large}px;
-  font-family: ${FontFamily.RubikBold};
+  font-family: ${FontFamily.Rubik};
   color: ${({ theme }) => theme.ColorPrimary};
 `;
 
@@ -39,7 +39,7 @@ export const FlatList = styled(_Flatlist as new () => _Flatlist<IPlayer>)`
   width: 100%;
 `;
 
-export const ListItem = styled.View`
+export const ListItem = styled(Base.PressableBox)`
   display: flex;
   flex-direction: row;
   align-items: center;
