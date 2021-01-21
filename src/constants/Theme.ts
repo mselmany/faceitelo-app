@@ -13,6 +13,7 @@ export default {
   Color10: "rgba(51, 51, 51, 0.10)",
   Color25: "rgba(51, 51, 51, 0.25)",
   Color50: "rgba(51, 51, 51, 0.5)",
+  Color75: "rgba(51, 51, 51, 0.75)",
   Color100: "rgba(51, 51, 51, 1)",
 
   ColorWin: "#27AE60",

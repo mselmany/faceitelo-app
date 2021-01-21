@@ -13,4 +13,4 @@ function Controller(p: IPlayerBox) {
   return <View {...p} />;
 }
 
-export default memo(Controller);
+export default Controller;

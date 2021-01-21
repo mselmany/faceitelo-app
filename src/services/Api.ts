@@ -16,7 +16,7 @@ class Api {
     this.player_search = player_search.items;
   }
 
-  async players(_nickname: string | undefined | null): Promise<IPlayer[]> {
+  async players(_nickname?: string): Promise<IPlayer[]> {
     const players: IPlayer[] = this.player_search
       .filter((player) =>
         !_nickname ? true : player.nickname.toLocaleLowerCase("en").includes(_nickname.toLocaleLowerCase("en"))

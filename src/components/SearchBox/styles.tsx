@@ -6,7 +6,9 @@ import * as Base from "../../shareds/Base";
 import { IPlayer } from "../../typings/types";
 
 export const Box = styled(Base.Box)`
-  flex: 1;
+  flex-basis: auto;
+  flex-grow: 0;
+  flex-shrink: 1;
   margin: ${Space.screenPadding}px;
   margin-top: 0;
   padding: 0;
@@ -25,15 +27,18 @@ export const Input = styled.TextInput`
   align-items: center;
   padding-left: ${Space.normal}px;
   width: 100%;
-  font-size: ${FontSize.large}px;
-  font-family: ${FontFamily.Rubik};
+  font-size: ${FontSize.xlarge}px;
+  line-height: ${FontSize.xlarge}px;
+  font-family: ${FontFamily.RubikBold};
   color: ${({ theme }) => theme.ColorPrimary};
 `;
 
 export const FlatList = styled(_Flatlist as new () => _Flatlist<IPlayer>)`
   display: flex;
   flex-direction: column;
-  flex: 1;
+  flex-basis: auto;
+  flex-grow: 0;
+  flex-shrink: 1;
   padding: 0 ${Space.normal}px;
   padding-bottom: ${Space.small}px;
   width: 100%;
@@ -44,6 +49,7 @@ export const ListItem = styled(Base.PressableBox)`
   flex-direction: row;
   align-items: center;
   padding: ${Space.small}px 0;
+  background-color: transparent;
 `;
 
 export const Avatar = styled.Image`

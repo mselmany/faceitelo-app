@@ -19,12 +19,12 @@ export interface ViewProps extends Props {
 }
 
 function Controller(p: Props) {
-  const [text, onChangeText] = useState<string>("jw");
+  const [text, onChangeText] = useState<string>("jw--");
   const [list, setList] = useState<IPlayer[]>([]);
 
   const navigation = useNavigation();
 
-  const debouncedText = useDebounce(text, 300);
+  const debouncedText = useDebounce(text, 350);
 
   useEffect(() => {
     (async () => {
@@ -34,8 +34,8 @@ function Controller(p: Props) {
   }, [debouncedText]);
 
   const onSelect = useCallback(
-    (user: IPlayer) => {
-      navigation.navigate("Overview", user);
+    (player: IPlayer) => {
+      navigation.navigate("Overview", { player });
     },
     [navigation]
   );

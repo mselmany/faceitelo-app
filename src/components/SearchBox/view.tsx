@@ -18,7 +18,7 @@ function View(p: ViewProps) {
       <Base.Seperator />
       <s.Input
         hitSlop={{ top: 10, bottom: 10 }}
-        placeholder="Search by nickname"
+        placeholder="Nickname"
         placeholderTextColor={theme.Color50}
         returnKeyType="search"
         value={p.text}
@@ -31,30 +31,32 @@ function View(p: ViewProps) {
       <s.FlatList
         data={p.list}
         keyExtractor={(item: IPlayer) => item.player_id}
-        renderItem={({ item }) => (
-          <s.ListItem onPress={() => p.onSelect(item)}>
-            <s.Avatar
-              source={{
-                uri: item.avatar || undefined,
-              }}
-            />
-            <s.NameAndInfos>
-              <s.Name numberOfLines={1}>{item.nickname}</s.Name>
-              <s.Infos>
-                <s.Info>Level {item.skill_level}</s.Info>
-                {item.verified && (
-                  <>
-                    <s.Info> • </s.Info>
-                    <s.Info>Verified</s.Info>
-                  </>
-                )}
-              </s.Infos>
-            </s.NameAndInfos>
-          </s.ListItem>
-        )}
+        renderItem={({ item }) => <ListItem {...{ item, p }} />}
       />
     </s.Box>
   );
 }
 
 export default memo(View);
+
+const ListItem = ({ p, item }: { p: any; item: IPlayer }) => (
+  <s.ListItem onPress={() => p.onSelect(item)}>
+    <s.Avatar
+      source={{
+        uri: item.avatar || undefined,
+      }}
+    />
+    <s.NameAndInfos>
+      <s.Name numberOfLines={1}>{item.nickname}</s.Name>
+      <s.Infos>
+        <s.Info>Level {item.skill_level}</s.Info>
+        {item.verified && (
+          <>
+            <s.Info> • </s.Info>
+            <s.Info>Verified</s.Info>
+          </>
+        )}
+      </s.Infos>
+    </s.NameAndInfos>
+  </s.ListItem>
+);

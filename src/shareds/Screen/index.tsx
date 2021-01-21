@@ -17,6 +17,8 @@ export const Wrapper = styled.SafeAreaView`
 export const Content = styled.View`
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   flex: 1;
 `;
 
