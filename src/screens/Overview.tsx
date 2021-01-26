@@ -8,6 +8,9 @@ import Buttons, { IButton } from "../shareds/Button";
 import * as Boxes from "../components/Boxes";
 import Elo from "../components/Boxes/Elo";
 import LastEloRatios from "../components/Boxes/LastEloRatios";
+import WinRate from "../components/Boxes/WinRate";
+import AverageKills from "../components/Boxes/AverageKills";
+import WinStreak from "../components/Boxes/WinStreak";
 
 interface Props {
   route: { params: { player: IPlayer } };
@@ -51,27 +54,15 @@ export default ({ route }: Props) => {
         <Boxes.Container>
           <Boxes.Group>
             <Elo solid>2107</Elo>
-            <LastEloRatios solid>asw</LastEloRatios>
+            <LastEloRatios solid dots={[-6, 10, -13, 10, 18]} />
           </Boxes.Group>
           <Boxes.Group>
-            <Elo>2107</Elo>
-            <LastEloRatios solid>aasdadsd</LastEloRatios>
+            <WinRate />
+            <AverageKills />
           </Boxes.Group>
           <Boxes.Group>
-            <Elo>a</Elo>
-            <Elo>a</Elo>
-          </Boxes.Group>
-          <Boxes.Group>
-            <Elo>asd</Elo>
-            <Elo>asd</Elo>
-          </Boxes.Group>
-          <Boxes.Group>
-            <Elo>asd</Elo>
-            <Elo>asd</Elo>
-          </Boxes.Group>
-          <Boxes.Group>
-            <Elo>asd</Elo>
-            <Elo>asd</Elo>
+            <WinStreak />
+            <Elo></Elo>
           </Boxes.Group>
         </Boxes.Container>
       </Screen.Scroll>

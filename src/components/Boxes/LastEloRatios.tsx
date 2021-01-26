@@ -1,5 +1,5 @@
+import React, { memo } from "react";
 import styled from "@emotion/native";
-import React, { memo, useState } from "react";
 
 import { FontFamily, Space } from "../../constants/System";
 import * as Base from "../../shareds/Base";
@@ -7,23 +7,26 @@ import * as Base from "../../shareds/Base";
 import * as s from "./styles";
 import { BoxProps } from "./styles";
 
-function View(p: Partial<BoxProps>) {
-  const [dots, setDots] = useState(() => [-6, 10, -13, 10, 18]);
+type Props = {
+  dots: number[];
+};
 
+function Component(p: Props & Partial<BoxProps>) {
   return (
     <s.PressableBox {...p}>
-      <s.BoxLine>
+      <s.Horizontal>
         <s.MoreLabel>See details</s.MoreLabel>
-      </s.BoxLine>
+      </s.Horizontal>
       <s.Box>
         <s.Padding>
-          <s.BoxLine>
+          <s.Horizontal>
             <s.Label>Last Elo Ratios</s.Label>
-          </s.BoxLine>
+          </s.Horizontal>
           <Base.Seperator />
           <Dots>
-            {dots.map((value, index) => (
-              <Dot key={index}>
+            {p.dots.map((value, index) => (
+              // eslint-disable-next-line react/no-array-index-key
+              <Dot key={index + value}>
                 <Circle size={value} />
                 <WL size={value}>{value < 0 ? "L" : "W"}</WL>
               </Dot>
@@ -35,13 +38,14 @@ function View(p: Partial<BoxProps>) {
   );
 }
 
-export default memo(View);
+export default memo(Component);
 
 const Dots = styled.View`
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: stretch;
+  margin-top: auto;
 `;
 
 const Dot = styled.View`

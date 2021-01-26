@@ -10,7 +10,7 @@ export const Space = {
   large: s(SPACE * 1.5),
   xlarge: s(SPACE * 2),
   screenPadding: s(SPACE),
-};
+} as const;
 
 export const FontSize = {
   small: s(16),
@@ -18,7 +18,7 @@ export const FontSize = {
   medium: s(28),
   large: s(32),
   xlarge: s(40),
-};
+} as const;
 
 export const FontFamily = {
   RubikLight: "RubikLight",
@@ -42,14 +42,14 @@ export const FontFamily = {
   BarlowCondensed: "BarlowCondensed",
   BarlowCondensedSemiBold: "BarlowCondensedSemiBold",
   BarlowCondensedBold: "BarlowCondensedBold",
-};
+} as const;
 
 export const Radius = {
   xsmall: s(3),
   small: s(5),
   normal: s(10),
   large: s(15),
-};
+} as const;
 
 export const Opacity = {
   a10: s(0.1),
@@ -57,18 +57,18 @@ export const Opacity = {
   a50: s(0.5),
   a75: s(0.75),
   none: s(1),
-};
+} as const;
 
 export const Shadow = {
   normal: shadow(0, 2, 5, theme.BackgroundComponent__Contrast, 0.2),
   bold: shadow(0, 3, 6, theme.BackgroundComponent__Contrast, 0.35),
-};
+} as const;
 
 export const Zindex = {
   reset: "0",
   localUpper: "10",
   globalUpper: "9999",
-};
+} as const;
 
 function shadow(x: number, y: number, blur: number, color: string, opacity: number): string {
   return `
