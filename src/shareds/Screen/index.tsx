@@ -14,14 +14,30 @@ export const Wrapper = styled.SafeAreaView`
   overflow: hidden;
 `;
 
-export const Content = styled.View`
+export const Content = styled.View<{ center: boolean }>`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
+  ${({ center }) => (center ? "align-items: center;" : "")}
   flex: 1;
 `;
 
+export const Scroll = styled.ScrollView<{ center: boolean }>`
+  display: flex;
+`;
+
+Scroll.defaultProps = {
+  contentContainerStyle: {
+    justifyContent: "flex-start",
+    alignItems: "center",
+  },
+};
+
 export const Block = styled.View`
-  padding: 0 ${Space.normal}px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex: 1;
+  width: 100%;
 `;

@@ -37,8 +37,12 @@ const Buttons = (p: Props) => {
   return (
     <Container>
       <Scroll horizontal showsHorizontalScrollIndicator={false}>
-        {buttons.map((button) => (
-          <Button key={button.value} isActive={button.isActive} onPress={() => onButtonPress(button)}>
+        {buttons.map((button, index) => (
+          <Button
+            key={button.value}
+            isActive={button.isActive}
+            onPress={() => onButtonPress(button)}
+            isLast={buttons.length - 1 === index}>
             {button.text}
           </Button>
         ))}
@@ -69,16 +73,22 @@ export const Scroll = styled.ScrollView`
   border-radius: ${Radius.normal}px;
 `;
 
+Scroll.defaultProps = { contentContainerStyle: { alignItems: "center" } };
+
 interface ButtonProps {
   children: ReactChildren | string;
   onPress: () => void;
   isActive?: boolean;
+  isLast?: boolean;
 }
 
 export const Button = (p: ButtonProps) => (
-  <ButtonItem onPress={p.onPress}>
-    <Text {...p}>{p.children}</Text>
-  </ButtonItem>
+  <>
+    <ButtonItem onPress={p.onPress}>
+      <Text {...p}>{p.children}</Text>
+    </ButtonItem>
+    {!p.isLast && <Point>•</Point>}
+  </>
 );
 
 const ButtonItem = styled.TouchableOpacity`
@@ -89,10 +99,25 @@ const ButtonItem = styled.TouchableOpacity`
 `;
 
 const Text = styled.Text<{ isActive?: boolean }>`
-  background-color: ${({ theme, isActive }) => (isActive ? theme.BackgroundComponent__Contrast : "transparent")};
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   padding: ${Space.small}px;
   border-radius: ${Radius.normal}px;
   font-size: ${FontSize.small}px;
   font-family: ${FontFamily.Rubik};
+  background-color: ${({ theme, isActive }) => (isActive ? theme.Color10 : "transparent")};
   color: ${({ theme, isActive }) => (isActive ? theme.Color75 : theme.Color50)};
+`;
+
+const Point = styled.Text`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0 ${Space.small}px;
+  font-size: ${FontSize.small}px;
+  font-family: ${FontFamily.RubikBold};
+  color: ${({ theme }) => theme.Color50};
 `;
