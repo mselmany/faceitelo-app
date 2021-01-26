@@ -6,7 +6,8 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "eject": "expo eject",
-    "clear-cache": "expo r -c"
+    "clear-cache": "expo r -c",
+    "build": "expo build:web"
   },
   "dependencies": {
     "@emotion/core": "^11.0.0",

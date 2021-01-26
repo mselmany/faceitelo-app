@@ -1,11 +1,12 @@
 import React, { memo } from "react";
 import styled from "@emotion/native";
 
-import { Space, FontFamily } from "../../constants/System";
+import { Space, FontFamily, Shadow } from "../../constants/System";
 import appJson from "../../../app.json";
 
 interface Props {
   loading?: boolean;
+  border?: boolean;
 }
 
 const { name } = appJson.expo;
@@ -23,7 +24,7 @@ function Status(p: Props) {
   // }));
 
   return (
-    <StatusWrapper>
+    <StatusWrapper {...p}>
       <StatusText>{name}</StatusText>
     </StatusWrapper>
   );
@@ -31,13 +32,19 @@ function Status(p: Props) {
 
 export default memo(Status);
 
-const StatusWrapper = styled.View`
+const StatusWrapper = styled.View<Partial<Props>>`
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   padding: 0 ${Space.screenPadding}px;
   height: ${(+Space.screenPadding * 3).toString()}px;
+  ${({ theme, border }) =>
+    border
+      ? `
+      border-bottom-width: 1px;
+      border-color: ${theme.BorderColor};`
+      : ""};
 `;
 
 const StatusText = styled.Text`
