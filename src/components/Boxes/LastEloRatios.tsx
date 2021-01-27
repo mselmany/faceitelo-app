@@ -9,29 +9,30 @@ import { BoxProps } from "./styles";
 
 type Props = {
   dots: number[];
+  onPress: () => void;
 };
 
 function Component(p: Props & Partial<BoxProps>) {
   return (
     <s.PressableBox {...p}>
-      <s.Horizontal>
+      <s.Vertical align="center">
         <s.MoreLabel>See details</s.MoreLabel>
-      </s.Horizontal>
+      </s.Vertical>
       <s.Box>
         <s.Padding>
-          <s.Horizontal>
+          <s.Vertical>
             <s.Label>Last Elo Ratios</s.Label>
-          </s.Horizontal>
-          <Base.Seperator />
-          <Dots>
-            {p.dots.map((value, index) => (
-              // eslint-disable-next-line react/no-array-index-key
-              <Dot key={index + value}>
-                <Circle size={value} />
-                <WL size={value}>{value < 0 ? "L" : "W"}</WL>
-              </Dot>
-            ))}
-          </Dots>
+            <Base.Seperator />
+            <Dots>
+              {p.dots.map((value, index) => (
+                // eslint-disable-next-line react/no-array-index-key
+                <Dot key={index + value}>
+                  <Circle size={value} />
+                  <WL size={value}>{value < 0 ? "L" : "W"}</WL>
+                </Dot>
+              ))}
+            </Dots>
+          </s.Vertical>
         </s.Padding>
       </s.Box>
     </s.PressableBox>

@@ -1,7 +1,6 @@
 import React, { memo } from "react";
 
 import { FontFamily, FontSize } from "../../constants/System";
-import Theme from "../../constants/Theme";
 import * as Base from "../../shareds/Base";
 
 import * as s from "./styles";
@@ -18,7 +17,7 @@ function Component(p: Partial<BoxProps>) {
   return (
     <s.Box {...p}>
       <s.Padding>
-        <s.Horizontal align="start">
+        <s.Horizontal>
           <s.Vertical>
             <s.Label>Avg. Kill</s.Label>
             <Base.Seperator />

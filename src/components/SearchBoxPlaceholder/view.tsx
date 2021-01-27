@@ -8,7 +8,7 @@ import { ViewProps } from "./index";
 
 function View(p: ViewProps) {
   return (
-    <s.Box onPress={() => p.openSearch()}>
+    <s.Box onPress={p.onPress}>
       <Base.BoxLine>
         <Base.Label>Search</Base.Label>
       </Base.BoxLine>

@@ -1,6 +1,6 @@
 import theme from "./Theme";
 
-const SPACE = 16;
+const SPACE = 16 as const;
 
 export const Space = {
   xsmall: s(SPACE * 0.25),

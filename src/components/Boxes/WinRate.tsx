@@ -17,13 +17,13 @@ function Component(p: Partial<BoxProps>) {
   return (
     <s.Box {...p}>
       <s.Padding>
-        <s.Horizontal>
+        <s.Vertical>
           <s.Label>Win %</s.Label>
-        </s.Horizontal>
-        <Base.Seperator />
-        <s.Text numberOfLines={1} size={FontSize.xlarge}>
-          {mock.winRate}
-        </s.Text>
+          <Base.Seperator />
+          <s.Text numberOfLines={1} size={FontSize.xlarge}>
+            {mock.winRate}
+          </s.Text>
+        </s.Vertical>
         <Base.Seperator />
         <Base.Seperator />
         <s.Horizontal>

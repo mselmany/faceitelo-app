@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import styled from "@emotion/native";
+import { useNavigation } from "@react-navigation/native";
 
 import AppHead from "../components/AppHead";
 import SearchBoxPlaceholder from "../components/SearchBoxPlaceholder";
@@ -20,11 +21,17 @@ export default () => {
     })();
   }, []);
 
+  const navigation = useNavigation();
+
+  const openSearch = useCallback(() => {
+    navigation.navigate("Search");
+  }, [navigation]);
+
   return (
     <Screen.Wrapper>
       <Screen.Content>
         <AppHead />
-        <SearchBoxPlaceholder />
+        <SearchBoxPlaceholder onPress={openSearch} />
         <Footer>
           <PlayerList label="Favorites" players={players} />
           <PlayerList label="Recent Searches" players={players} />

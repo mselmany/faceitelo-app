@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useMemo, useState } from "react";
+import { useNavigation } from "@react-navigation/native";
 
 import Api from "../services/Api";
 import * as Screen from "../shareds/Screen";
@@ -11,6 +12,7 @@ import LastEloRatios from "../components/Boxes/LastEloRatios";
 import WinRate from "../components/Boxes/WinRate";
 import AverageKills from "../components/Boxes/AverageKills";
 import WinStreak from "../components/Boxes/WinStreak";
+import Ban from "../components/Boxes/Ban";
 
 interface Props {
   route: { params: { player: IPlayer } };
@@ -45,6 +47,12 @@ export default ({ route }: Props) => {
     console.log(button, buttons);
   }, []);
 
+  const navigation = useNavigation();
+
+  const onLastEloRatiosDetail = useCallback(() => {
+    navigation.navigate("Home");
+  }, [navigation]);
+
   return (
     <Screen.Wrapper>
       <Screen.Status />
@@ -54,7 +62,7 @@ export default ({ route }: Props) => {
         <Boxes.Container>
           <Boxes.Group>
             <Elo solid>2107</Elo>
-            <LastEloRatios solid dots={[-6, 10, -13, 10, 18]} />
+            <LastEloRatios solid dots={[-6, 10, -13, 10, 18]} onPress={onLastEloRatiosDetail} />
           </Boxes.Group>
           <Boxes.Group>
             <WinRate />
@@ -62,7 +70,7 @@ export default ({ route }: Props) => {
           </Boxes.Group>
           <Boxes.Group>
             <WinStreak />
-            <Elo></Elo>
+            <Ban />
           </Boxes.Group>
         </Boxes.Container>
       </Screen.Scroll>

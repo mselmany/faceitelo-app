@@ -84,30 +84,26 @@ interface ButtonProps {
 
 export const Button = (p: ButtonProps) => (
   <>
-    <ButtonItem onPress={p.onPress}>
+    <ButtonItem {...p}>
       <Text {...p}>{p.children}</Text>
     </ButtonItem>
     {!p.isLast && <Point>•</Point>}
   </>
 );
 
-const ButtonItem = styled.TouchableOpacity`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-`;
-
-const Text = styled.Text<{ isActive?: boolean }>`
+const ButtonItem = styled.TouchableOpacity<{ isActive?: boolean }>`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   padding: ${Space.small}px;
   border-radius: ${Radius.normal}px;
+  background-color: ${({ theme, isActive }) => (isActive ? theme.Color10 : "transparent")};
+`;
+
+const Text = styled.Text<{ isActive?: boolean }>`
   font-size: ${FontSize.small}px;
   font-family: ${FontFamily.Rubik};
-  background-color: ${({ theme, isActive }) => (isActive ? theme.Color10 : "transparent")};
   color: ${({ theme, isActive }) => (isActive ? theme.Color75 : theme.Color50)};
 `;
 

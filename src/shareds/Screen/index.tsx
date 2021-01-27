@@ -14,7 +14,7 @@ export const Wrapper = styled.SafeAreaView`
   overflow: hidden;
 `;
 
-export const Content = styled.View<{ center: boolean }>`
+export const Content = styled.View<{ center?: boolean }>`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;

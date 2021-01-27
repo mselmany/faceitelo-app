@@ -1,22 +1,15 @@
-import { useNavigation } from "@react-navigation/native";
-import React, { useCallback } from "react";
+import React from "react";
 
 import View from "./view";
 
-interface Props {}
+type Props = {
+  onPress: () => void;
+};
 
-export interface ViewProps extends Props {
-  openSearch: () => void;
-}
+export type ViewProps = Props;
 
 function Controller(p: Props) {
-  const navigation = useNavigation();
-
-  const openSearch = useCallback(() => {
-    navigation.navigate("Search");
-  }, [navigation]);
-
-  return <View {...{ ...p, openSearch }} />;
+  return <View {...p} />;
 }
 
 export default Controller;

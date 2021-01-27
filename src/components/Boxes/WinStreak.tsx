@@ -21,12 +21,12 @@ function Component(p: Partial<BoxProps>) {
         </s.Vertical>
         <Base.Seperator />
         <s.Horizontal>
-          <s.Vertical align="end">
+          <s.Vertical align="center">
             <s.Text family={FontFamily.BarlowCondensedLight}>{mock.current}</s.Text>
             <Base.Seperator />
             <s.Label>Current</s.Label>
           </s.Vertical>
-          <s.Vertical align="start">
+          <s.Vertical align="center">
             <s.Text family={FontFamily.BarlowCondensedLight}>{mock.longest}</s.Text>
             <Base.Seperator />
             <s.Label>Longest</s.Label>

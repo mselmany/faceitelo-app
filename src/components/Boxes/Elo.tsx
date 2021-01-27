@@ -10,13 +10,13 @@ function Component(p: Partial<BoxProps>) {
   return (
     <s.Box {...p}>
       <s.Padding>
-        <s.Horizontal>
+        <s.Vertical align="start">
           <s.Label>Elo</s.Label>
-        </s.Horizontal>
-        <Base.Seperator />
-        <s.Text numberOfLines={1} size={FontSize.xlarge} family={FontFamily.RubikBold}>
-          {p.children}
-        </s.Text>
+          <Base.Seperator />
+          <s.Text numberOfLines={1} size={FontSize.xlarge} family={FontFamily.RubikBold}>
+            {p.children}
+          </s.Text>
+        </s.Vertical>
       </s.Padding>
     </s.Box>
   );
