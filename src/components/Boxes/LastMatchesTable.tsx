@@ -122,11 +122,11 @@ const Column = styled.View<{ ratio?: number } & AlignmentProps & TextProps>`
   margin-left: 2px;
 `;
 
-const Text = styled.Text<{ opacity?: number | string } & TextProps>`
+const Text = styled.Text<{ opacity?: string } & TextProps>`
   font-size: ${({ size = FontSize.small }) => String(size)}px;
   font-family: ${({ family = FontFamily.Rubik }) => family};
   color: ${({ theme }) => theme.ColorPrimary};
-  opacity: ${({ opacity = 1 }) => opacity};
+  opacity: ${({ opacity = "1" }) => opacity};
 `;
 
 const EloPointHidden = styled.View`
