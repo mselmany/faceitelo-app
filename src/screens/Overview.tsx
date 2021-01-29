@@ -13,6 +13,7 @@ import WinRate from "../components/Boxes/WinRate";
 import AverageKills from "../components/Boxes/AverageKills";
 import WinStreak from "../components/Boxes/WinStreak";
 import Ban from "../components/Boxes/Ban";
+import LastMatchesTable from "../components/Boxes/LastMatchesTable";
 
 interface Props {
   route: { params: { player: IPlayer } };
@@ -71,6 +72,9 @@ export default ({ route }: Props) => {
           <Boxes.Group>
             <WinStreak />
             <Ban />
+          </Boxes.Group>
+          <Boxes.Group>
+            <LastMatchesTable solid data={[-6, 10, -13, 10, 18]} onPress={() => null} />
           </Boxes.Group>
         </Boxes.Container>
       </Screen.Scroll>

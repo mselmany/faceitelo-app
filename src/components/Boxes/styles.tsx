@@ -15,6 +15,28 @@ export type BoxProps = _BoxProps & ViewProps;
 
 export type PressableBoxProps = _BoxProps & PressableProps;
 
+export type TextProps = {
+  size?: number | string;
+  family?: string;
+};
+
+export const BoxAlignments = {
+  start: "flex-start",
+  center: "center",
+  end: "flex-end",
+} as const;
+
+export const TextAlignments = {
+  start: "left",
+  center: "center",
+  end: "right",
+} as const;
+
+export type AlignmentProps = {
+  align?: "start" | "center" | "end";
+  full?: boolean;
+};
+
 const boxStyles = (p: _BoxProps & { theme: Theme }) => `
   display: flex;
   flex-direction: column;
@@ -43,17 +65,6 @@ export const Padding = styled.View`
   padding: ${Space.normal}px;
 `;
 
-const BoxAlignments = {
-  start: "flex-start",
-  center: "center",
-  end: "flex-end",
-} as const;
-
-type AlignmentProps = {
-  align?: "start" | "center" | "end";
-  full?: boolean;
-};
-
 export const Horizontal = styled.View<AlignmentProps>`
   display: flex;
   flex-direction: row;
@@ -81,9 +92,9 @@ export const Center = styled.View<Pick<AlignmentProps, "full">>`
   ${({ full = false }) => (full ? "flex: 1;" : "")};
 `;
 
-export const Label = styled.Text`
-  font-size: ${FontSize.small}px;
-  font-family: ${FontFamily.Rubik};
+export const Label = styled.Text<TextProps>`
+  font-size: ${({ size = FontSize.small }) => String(size)}px;
+  font-family: ${({ family = FontFamily.Rubik }) => family};
   color: ${({ theme }) => theme.Color25};
 `;
 
@@ -91,11 +102,6 @@ export const MoreLabel = styled(Label)`
   color: ${({ theme }) => theme.Color50};
   padding: ${Space.normal}px;
 `;
-
-type TextProps = {
-  size?: number | string;
-  family?: string;
-};
 
 export const Text = styled.Text<TextProps>`
   font-size: ${({ size = FontSize.large }) => String(size)}px;

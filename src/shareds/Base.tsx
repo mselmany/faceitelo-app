@@ -29,10 +29,16 @@ export const BoxLine = styled.View`
   align-items: center;
 `;
 
-export const Seperator = styled.View`
+export const Seperator = styled.View<{ vertical?: boolean }>`
   display: flex;
-  width: 100%;
-  height: ${Space.small}px;
+  ${({ vertical = false }) =>
+    vertical
+      ? `
+        height: 100%;
+        width: ${Space.small}px;`
+      : `
+        width: 100%;
+        height: ${Space.small}px;`}
 `;
 
 export const Label = styled.Text`
