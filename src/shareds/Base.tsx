@@ -54,3 +54,17 @@ export const Head = styled.Text`
   font-family: ${FontFamily.Rubik};
   color: ${({ theme }) => theme.ColorPrimary};
 `;
+
+export type TextProps = {
+  size?: number | string;
+  family?: keyof typeof FontFamily;
+  opacity?: string;
+  color?: string;
+};
+
+export const Text = styled.Text<TextProps>`
+  font-size: ${({ size = FontSize.small }) => String(size)}px;
+  font-family: ${({ family = FontFamily.Rubik }) => family};
+  color: ${({ theme, color = theme.ColorPrimary }) => color};
+  ${({ opacity }) => (opacity ? `opacity: ${opacity};` : "")};
+`;
