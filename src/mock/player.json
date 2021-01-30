@@ -1,0 +1,93 @@
+{
+  "player_id": "4946fdbd-00e9-4408-91dd-6f3c87c39b23",
+  "*nickname": "JW",
+  "*avatar": "https://assets.faceit-cdn.net/avatars/4946fdbd-00e9-4408-91dd-6f3c87c39b23_1582047085857.jpg",
+  "*country": "se",
+  "cover_image": "https://assets.faceit-cdn.net/users_covers/4946fdbd-00e9-4408-91dd-6f3c87c39b23_1550753346286.jpg",
+  "cover_featured_image": "https://d50m6q67g4bn3.cloudfront.net/users_covers_featured/4946fdbd-00e9-4408-91dd-6f3c87c39b23_1487090465685",
+  "infractions": {
+    "last_infraction_date": "Sun Jun 11 19:59:07 UTC 2017",
+    "afk": 0,
+    "leaver": 0,
+    "qm_not_checkedin": 1,
+    "qm_not_voted": 0
+  },
+  "*platforms": {
+    "*steam": "STEAM_0:0:35644236"
+  },
+  "*games": {
+    "*csgo": {
+      "game_profile_id": "csgo_JeSpErW",
+      "region": "EU",
+      "regions": {
+        "EU": {
+          "selected_ladder_id": "008d050c-08ee-459d-bca2-4d6913c7f30c"
+        },
+        "US": {
+          "selected_ladder_id": "104e2b8a-ed3a-412e-9379-ffd1f8d00fb3"
+        }
+      },
+      "skill_level_label": "10",
+      "game_player_id": "76561198031554200",
+      "*skill_level": 10,
+      "*faceit_elo": 3036,
+      "game_player_name": "Wonderchild"
+    },
+    "csdz": {
+      "game_profile_id": "57dd3868-d0ac-46fa-bf88-b6200892c181",
+      "region": "EU",
+      "regions": null,
+      "skill_level_label": "3",
+      "game_player_id": "76561198031554200",
+      "skill_level": 3,
+      "faceit_elo": 0,
+      "game_player_name": "Speedy Gonzalez"
+    }
+  },
+  "settings": {
+    "language": "en"
+  },
+  "friends_ids": [
+    "5c90ca92-7ea3-4b0c-b2cb-25edb5c6b77d",
+    "3de64c20-5c8e-4779-af49-bc7e17ca0e1d",
+    "aa28139e-5d33-4404-a678-567d30a3be5d",
+    "663660ab-17e6-461c-96fa-401a410c0738",
+    "4e093c2c-f277-4877-a200-029ae6d8602f",
+    "bc02dee4-f73c-41e9-8d71-108dc4ee0cae",
+    "850cda70-a985-4097-aea3-ccd4b35fbb1a",
+    "ff5182b8-4bd4-4109-b79a-3ace68698e88",
+    "3b23a5ab-c984-4187-ab88-4c7f5c40713b",
+    "617a5a63-7386-4ce9-a3ba-81c3c3a18596",
+    "3e7a011f-060f-4eea-9faf-5010486a34f1",
+    "b69716e5-1a1a-4b45-be0e-0e964e41b4d7",
+    "47946790-c6fa-49c6-a29c-8667ed9e656e",
+    "3a1c610b-9e0f-4a2d-baa6-cba2e819c6be",
+    "90ce153c-5a16-448f-b7f5-3aa9bac3dbbb",
+    "520d7ea2-999b-4757-97d9-8a3b6390f7eb",
+    "93fdfbd9-b47d-4b25-a200-1b44931e86e0",
+    "edd17a40-20dc-4370-b824-ddea44d9dfe3",
+    "141d5a98-2663-4f75-b157-b2aa092b5c60",
+    "8a2f2125-4d5a-4bf8-a5ff-10e7fb3ef2fa",
+    "dc1ef6ab-b2fd-4733-9471-bc65aa222437",
+    "825a7b34-6e28-4943-853a-10162c4df99a",
+    "d36eaa36-75fe-4b06-9f34-59190cd3e941",
+    "07cc85d8-9ec2-43ae-91b0-4895ef4486f7",
+    "46b85145-031f-4bb2-8f2f-15a4e2ad39a8",
+    "22164191-ca2b-4f73-9d17-dcdcbe9aa71d",
+    "a44576a1-c589-4b32-b01c-142b8a73611d",
+    "93496fb8-76c6-4db7-9d6d-f826296cac73",
+    "14544854-32f3-4a7f-a163-8762db6eaff3",
+    "b3b57665-f9d4-4aa6-b9a9-a7d0fdebd2c7",
+    "6c48dae4-eaa2-48a5-9772-e8e0dd8c87c2",
+    "84cd6984-6582-483e-bedb-4ea8366c67fb",
+    "c607ab81-80b7-4411-a4ff-359bdd54a34c",
+    "dac206bc-d366-47cc-b426-8da3f1d0967a"
+  ],
+  "*bans": [],
+  "new_steam_id": "[U:1:71288472]",
+  "?steam_id_64": "76561198031554200",
+  "steam_nickname": "Speedy Gonzalez",
+  "*membership_type": "premium",
+  "memberships": ["premium"],
+  "?faceit_url": "https://www.faceit.com/{lang}/players/JW"
+}
