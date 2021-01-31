@@ -7,11 +7,12 @@ import SearchBoxPlaceholder from "../components/SearchBoxPlaceholder";
 import Api from "../services/Api";
 import { Space } from "../constants/System";
 import * as Screen from "../shareds/Screen";
-import PlayerBoxList from "../components/PlayerBoxList";
+import PlayerList from "../components/PlayerList";
 import { IPlayer } from "../typings/types";
+import * as Base from "../shareds/Base";
 
 export default () => {
-  const [players, setPlayers] = useState<IPlayer[]>();
+  const [players, setPlayers] = useState<IPlayer[]>([]);
 
   useEffect(() => {
     (async () => {
@@ -34,6 +35,7 @@ export default () => {
         <SearchBoxPlaceholder onPress={openSearch} />
         <Footer>
           <PlayerList label="Favorites" players={players} />
+          <Base.Seperator ratio="2" />
           <PlayerList label="Recent Searches" players={players} />
         </Footer>
       </Screen.Content>
@@ -43,8 +45,5 @@ export default () => {
 
 const Footer = styled.View`
   margin-top: auto;
-`;
-
-const PlayerList = styled(PlayerBoxList)`
   margin-bottom: ${Space.screenPadding}px;
 `;

@@ -1,9 +1,8 @@
-import React, { memo, useMemo } from "react";
+import React, { memo } from "react";
 import styled from "@emotion/native";
 
 import { FontFamily, Space } from "../../constants/System";
 import * as Base from "../../shareds/Base";
-import Theme from "../../constants/Theme";
 
 import * as s from "./styles";
 import { BoxProps } from "./styles";
@@ -29,30 +28,30 @@ function Component(p: Props & Partial<BoxProps>) {
 
   return (
     <s.PressableBox {...p}>
-      <s.Vertical align="center">
-        <s.MoreLabel>See details</s.MoreLabel>
-      </s.Vertical>
+      <Base.Vertical align="center">
+        <Base.MoreLabel>See details</Base.MoreLabel>
+      </Base.Vertical>
       <s.Box>
         <s.Padding>
-          <s.Vertical>
-            <s.Label>Last Elo Ratios</s.Label>
-            <Base.Seperator />
-            <s.Horizontal align="center">
-              <Dots>
-                {p.dots.map((value, index) => (
-                  // eslint-disable-next-line react/no-array-index-key
-                  <Dot key={index + value}>
-                    <Circle size={value} />
-                    <WL size={value}>{value < 0 ? "L" : "W"}</WL>
-                  </Dot>
-                ))}
-              </Dots>
-              {/* <Base.Seperator vertical />
+          <Base.Vertical>
+            <Base.Label>Last Elo Ratios</Base.Label>
+          </Base.Vertical>
+          <Base.Seperator />
+          <Base.Horizontal align="center">
+            <Dots>
+              {p.dots.map((value, index) => (
+                // eslint-disable-next-line react/no-array-index-key
+                <Dot key={index + value}>
+                  <Circle size={value} />
+                  <WL size={value}>{value < 0 ? "L" : "W"}</WL>
+                </Dot>
+              ))}
+            </Dots>
+            {/* <Base.Seperator vertical />
               <s.Label family={FontFamily.BarlowCondensedSemiBold} style={{ color: lastMatchesSumPoint.color }}>
                 {lastMatchesSumPoint.sum}
               </s.Label> */}
-            </s.Horizontal>
-          </s.Vertical>
+          </Base.Horizontal>
         </s.Padding>
       </s.Box>
     </s.PressableBox>

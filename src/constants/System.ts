@@ -13,6 +13,7 @@ export const Space = {
 } as const;
 
 export const FontSize = {
+  xsmall: s(14),
   small: s(16),
   normal: s(20),
   medium: s(28),

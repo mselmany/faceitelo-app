@@ -17,34 +17,39 @@ function Component(p: Partial<BoxProps>) {
   return (
     <s.Box {...p}>
       <s.Padding>
-        <s.Horizontal>
-          <s.Vertical>
-            <s.Label>Avg. Kill</s.Label>
+        <Base.Horizontal align="start">
+          <Base.Vertical>
+            <Base.Label>Avg. Kill</Base.Label>
             <Base.Seperator />
-            <s.Text size={FontSize.xlarge}>{mock.avgKill}</s.Text>
-          </s.Vertical>
-          <s.Vertical align="end">
-            <s.Label>HS %</s.Label>
+            <Base.Text family="RubikBold" size="xlarge">
+              {mock.avgKill}
+            </Base.Text>
+          </Base.Vertical>
+          <Base.Vertical align="end">
+            <Base.Label>HS %</Base.Label>
             <Base.Seperator />
-            <s.Text family={FontFamily.BarlowCondensed} size={FontSize.medium}>
+            <Base.Text family="BarlowCondensed" size="medium">
               {mock.hs}
-            </s.Text>
-          </s.Vertical>
-        </s.Horizontal>
+            </Base.Text>
+          </Base.Vertical>
+        </Base.Horizontal>
         <Base.Seperator />
-        <Base.Seperator />
-        <s.Horizontal>
-          <s.Vertical>
-            <s.Text family={FontFamily.BarlowCondensedSemiBold}>{mock.kd}</s.Text>
+        <Base.Horizontal align="end">
+          <Base.Vertical>
+            <Base.Text family="BarlowCondensedSemiBold" size="medium">
+              {mock.kd}
+            </Base.Text>
             <Base.Seperator />
-            <s.Label>K/D</s.Label>
-          </s.Vertical>
-          <s.Vertical align="end">
-            <s.Text family={FontFamily.BarlowCondensed}>{mock.kr}</s.Text>
+            <Base.Label>K/D</Base.Label>
+          </Base.Vertical>
+          <Base.Vertical align="end">
+            <Base.Text family="BarlowCondensed" size="medium">
+              {mock.kr}
+            </Base.Text>
             <Base.Seperator />
-            <s.Label>K/R</s.Label>
-          </s.Vertical>
-        </s.Horizontal>
+            <Base.Label>K/R</Base.Label>
+          </Base.Vertical>
+        </Base.Horizontal>
       </s.Padding>
     </s.Box>
   );

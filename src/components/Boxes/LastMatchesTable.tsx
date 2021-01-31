@@ -1,12 +1,12 @@
 import React, { memo } from "react";
 import styled from "@emotion/native";
 
-import { FontFamily, FontSize, Space } from "../../constants/System";
+import { FontFamily, Space } from "../../constants/System";
 import * as Base from "../../shareds/Base";
 import Theme from "../../constants/Theme";
 
 import * as s from "./styles";
-import { AlignmentProps, BoxAlignments, BoxProps, TextAlignments, TextProps } from "./styles";
+import { BoxProps } from "./styles";
 
 type Props = {
   data: number[];
@@ -42,8 +42,8 @@ function Component(p: Props & Partial<BoxProps>) {
     <s.PressableBox {...p}>
       <s.Box>
         <s.Padding>
-          <s.Vertical>
-            <s.Label>Last matches results • {mock.matches.length}</s.Label>
+          <Base.Vertical>
+            <Base.Label>Last matches results • {mock.matches.length}</Base.Label>
             <Base.Seperator />
             <Tables>
               <Table ratio={3}>
@@ -104,19 +104,19 @@ function Component(p: Props & Partial<BoxProps>) {
             </Tables>
             <Base.Seperator />
             <Base.Seperator />
-          </s.Vertical>
+          </Base.Vertical>
         </s.Padding>
       </s.Box>
-      <s.Vertical align="center">
-        <s.MoreLabel>See all matches</s.MoreLabel>
-      </s.Vertical>
+      <Base.Vertical align="center">
+        <Base.MoreLabel>See all matches</Base.MoreLabel>
+      </Base.Vertical>
     </s.PressableBox>
   );
 }
 
 export default memo(Component);
 
-const Tables = styled(s.Horizontal)`
+const Tables = styled(Base.Horizontal)`
   width: 100%;
 `;
 
@@ -131,16 +131,17 @@ const Row = styled.View<{ withBorder?: boolean }>`
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
+  flex-wrap: nowrap;
   position: relative;
   padding: ${Space.xsmall}px;
   padding-top: ${String(+Space.xsmall * 3)}px;
   ${({ theme, withBorder }) => (withBorder ? `border-top-width: 1px; border-color: ${theme.BorderColor};` : "")};
 `;
 
-const Column = styled.View<{ ratio?: number } & AlignmentProps & Base.TextProps>`
+const Column = styled.View<{ ratio?: number } & Base.AlignmentProps & Base.TextProps>`
   display: flex;
   flex-direction: row;
-  justify-content: ${({ align = "start" }) => BoxAlignments[align] || align};
+  justify-content: ${({ align = "start" }) => Base.BoxAlignments[align] || align};
   align-items: center;
   position: relative;
   ${({ ratio = 1 }) => `flex: ${ratio};`}

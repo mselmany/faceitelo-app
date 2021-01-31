@@ -12,22 +12,21 @@ function View(p: ViewProps) {
   const theme = useTheme();
   return (
     <s.Box>
-      <s.BoxLine>
+      <s.Padding>
         <Base.Label>Search • {p.list.length ? `${p.list.length} players found` : "No player found"}</Base.Label>
-      </s.BoxLine>
-      <Base.Seperator />
-      <s.Input
-        hitSlop={{ top: 10, bottom: 10 }}
-        placeholder="Nickname"
-        placeholderTextColor={theme.Color50}
-        returnKeyType="search"
-        value={p.text}
-        onChangeText={p.onChangeText}
-        autoFocus={p.isFocused}
-        blurOnSubmit
-        numberOfLines={1}
-      />
-      <Base.Seperator />
+        <Base.Seperator />
+        <s.Input
+          hitSlop={{ top: 10, bottom: 10 }}
+          placeholder="Nickname"
+          placeholderTextColor={theme.Color50}
+          returnKeyType="search"
+          value={p.text}
+          onChangeText={p.onChangeText}
+          autoFocus={p.isFocused}
+          blurOnSubmit
+          numberOfLines={1}
+        />
+      </s.Padding>
       <s.FlatList
         data={p.list}
         keyExtractor={(item: IPlayer) => item.player_id}
@@ -46,8 +45,10 @@ const ListItem = ({ p, item }: { p: any; item: IPlayer }) => (
         uri: item.avatar || undefined,
       }}
     />
-    <s.NameAndInfos>
-      <s.Name numberOfLines={1}>{item.nickname}</s.Name>
+    <Base.Vertical full>
+      <Base.Text numberOfLines={1} size="normal">
+        {item.nickname}
+      </Base.Text>
       <s.Infos>
         <s.Info>Level {item.skill_level}</s.Info>
         {item.verified && (
@@ -57,6 +58,6 @@ const ListItem = ({ p, item }: { p: any; item: IPlayer }) => (
           </>
         )}
       </s.Infos>
-    </s.NameAndInfos>
+    </Base.Vertical>
   </s.ListItem>
 );

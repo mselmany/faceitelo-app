@@ -1,51 +1,40 @@
 import styled from "@emotion/native";
 import { FlatList as _Flatlist } from "react-native";
 
-import { FontFamily, FontSize, Space } from "../../constants/System";
+import { FontFamily, FontSize, Radius, Space } from "../../constants/System";
 import * as Base from "../../shareds/Base";
 import { IPlayer } from "../../typings/types";
 
 export const Box = styled(Base.Box)`
-  flex-basis: auto;
-  flex-grow: 0;
-  flex-shrink: 1;
+  flex: 0 1 auto;
   margin: ${Space.screenPadding}px;
   margin-top: 0;
   padding: 0;
-  padding-top: ${Space.normal}px;
 `;
 
-export const BoxLine = styled.View`
-  display: flex;
-  flex-direction: row;
-  padding: 0 ${Space.normal}px;
+export const Padding = styled(Base.Vertical)`
+  padding: ${Space.normal}px;
 `;
 
-export const Input = styled.TextInput`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding-left: ${Space.normal}px;
-  width: 100%;
+export const Input = styled(Base.TextInput)`
   font-size: ${FontSize.xlarge}px;
-  line-height: ${FontSize.xlarge}px;
-  font-family: ${FontFamily.RubikBold};
-  color: ${({ theme }) => theme.ColorPrimary};
 `;
 
 export const FlatList = styled(_Flatlist as new () => _Flatlist<IPlayer>)`
   display: flex;
   flex-direction: column;
-  flex-basis: auto;
-  flex-grow: 0;
-  flex-shrink: 1;
+  flex: 0 1 auto;
   padding: 0 ${Space.normal}px;
-  padding-bottom: ${Space.small}px;
   width: 100%;
 `;
 
+FlatList.defaultProps = {
+  contentContainerStyle: {
+    paddingBottom: +Space.small,
+  },
+};
+
 export const ListItem = styled(Base.PressableBox)`
-  display: flex;
   flex-direction: row;
   align-items: center;
   padding: ${Space.small}px 0;
@@ -53,19 +42,11 @@ export const ListItem = styled(Base.PressableBox)`
 `;
 
 export const Avatar = styled.Image`
-  width: ${(+Space.xlarge * 1.5).toString()}px;
-  height: ${(+Space.xlarge * 1.5).toString()}px;
+  width: ${String(+Space.xlarge * 1.5)}px;
+  height: ${String(+Space.xlarge * 1.5)}px;
   border-radius: ${Space.xlarge}px;
   background-color: ${({ theme }) => theme.BackgroundComponent__Contrast};
-`;
-
-export const NameAndInfos = styled.View`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  flex: 1;
-  margin-left: ${Space.normal}px;
+  margin-right: ${Space.normal}px;
 `;
 
 export const Infos = styled.View`
@@ -75,13 +56,6 @@ export const Infos = styled.View`
   align-items: center;
 `;
 
-export const Info = styled.Text`
-  font-size: ${FontSize.small}px;
-  font-family: ${FontFamily.Rubik};
+export const Info = styled(Base.Text)`
   color: ${({ theme }) => theme.Color25};
-`;
-
-export const Name = styled.Text`
-  font-size: ${FontSize.normal}px;
-  font-family: ${FontFamily.Rubik};
 `;

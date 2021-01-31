@@ -1,6 +1,5 @@
 import React, { memo } from "react";
 
-import { FontFamily, FontSize } from "../../constants/System";
 import * as Base from "../../shareds/Base";
 
 import * as s from "./styles";
@@ -10,13 +9,13 @@ function Component(p: Partial<BoxProps>) {
   return (
     <s.Box {...p}>
       <s.Padding>
-        <s.Vertical align="start">
-          <s.Label>Elo</s.Label>
+        <Base.Vertical>
+          <Base.Label>Elo</Base.Label>
           <Base.Seperator />
-          <s.Text numberOfLines={1} size={FontSize.xlarge} family={FontFamily.RubikBold}>
+          <Base.Text numberOfLines={1} size="xlarge" family="RubikBold">
             {p.children}
-          </s.Text>
-        </s.Vertical>
+          </Base.Text>
+        </Base.Vertical>
       </s.Padding>
     </s.Box>
   );

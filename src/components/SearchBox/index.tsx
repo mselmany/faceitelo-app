@@ -19,7 +19,7 @@ export interface ViewProps extends Props {
 }
 
 function Controller(p: Props) {
-  const [text, onChangeText] = useState<string>("jw--");
+  const [text, onChangeText] = useState<string>("jw");
   const [list, setList] = useState<IPlayer[]>([]);
 
   const navigation = useNavigation();

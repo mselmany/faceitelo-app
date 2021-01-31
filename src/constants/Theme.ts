@@ -25,4 +25,4 @@ export default {
 
   BackgroundYellow: "#FFF4B8",
   ColorYellow: "#EFCA00",
-};
+} as const;

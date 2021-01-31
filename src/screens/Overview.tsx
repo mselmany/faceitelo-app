@@ -6,7 +6,7 @@ import * as Screen from "../shareds/Screen";
 import { IPlayer } from "../typings/types";
 import PlayerInfo from "../components/PlayerInfo";
 import Buttons, { IButton } from "../shareds/Button";
-import * as Boxes from "../components/Boxes";
+import * as Boxes from "../components/Boxes/styles";
 import Elo from "../components/Boxes/Elo";
 import LastEloRatios from "../components/Boxes/LastEloRatios";
 import WinRate from "../components/Boxes/WinRate";
@@ -57,26 +57,28 @@ export default ({ route }: Props) => {
   return (
     <Screen.Wrapper>
       <Screen.Status />
-      <Screen.Scroll center>
-        <PlayerInfo player={player} />
-        <Buttons list={buttons} onPress={onButtonPress} />
-        <Boxes.Container>
-          <Boxes.Group>
-            <Elo solid>2107</Elo>
-            <LastEloRatios solid dots={[-6, 10, -13, 10, 18]} onPress={onLastEloRatiosDetail} />
-          </Boxes.Group>
-          <Boxes.Group>
-            <WinRate />
-            <AverageKills />
-          </Boxes.Group>
-          <Boxes.Group>
-            <WinStreak />
-            <Ban />
-          </Boxes.Group>
-          <Boxes.Group>
-            <LastMatchesTable solid data={[-6, 10, -13, 10, 18]} onPress={() => null} />
-          </Boxes.Group>
-        </Boxes.Container>
+      <Screen.Scroll>
+        <Screen.Vertical align="center">
+          <PlayerInfo player={player} />
+          <Buttons list={buttons} onPress={onButtonPress} />
+          <Boxes.Container>
+            <Boxes.Group>
+              <Elo solid>2107</Elo>
+              <LastEloRatios solid dots={[-6, 10, -13, 10, 18]} onPress={onLastEloRatiosDetail} />
+            </Boxes.Group>
+            <Boxes.Group>
+              <WinRate />
+              <AverageKills />
+            </Boxes.Group>
+            <Boxes.Group>
+              <WinStreak />
+              <Ban />
+            </Boxes.Group>
+            <Boxes.Group>
+              <LastMatchesTable solid data={[-6, 10, -13, 10, 18]} onPress={() => null} />
+            </Boxes.Group>
+          </Boxes.Container>
+        </Screen.Vertical>
       </Screen.Scroll>
     </Screen.Wrapper>
   );

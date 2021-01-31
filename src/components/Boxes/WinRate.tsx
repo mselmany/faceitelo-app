@@ -1,6 +1,5 @@
 import React, { memo } from "react";
 
-import { FontFamily, FontSize } from "../../constants/System";
 import Theme from "../../constants/Theme";
 import * as Base from "../../shareds/Base";
 
@@ -17,36 +16,37 @@ function Component(p: Partial<BoxProps>) {
   return (
     <s.Box {...p}>
       <s.Padding>
-        <s.Vertical>
-          <s.Label>Win %</s.Label>
+        <Base.Vertical>
+          <Base.Label>Win %</Base.Label>
           <Base.Seperator />
-          <s.Text numberOfLines={1} size={FontSize.xlarge}>
+          <Base.Text numberOfLines={1} size="xlarge" family="RubikBold">
             {mock.winRate}
-          </s.Text>
-        </s.Vertical>
+          </Base.Text>
+        </Base.Vertical>
         <Base.Seperator />
-        <Base.Seperator />
-        <s.Horizontal>
-          <s.Vertical>
-            <s.Text family={FontFamily.BarlowCondensedLight} style={{ color: Theme.ColorWin }}>
+        <Base.Horizontal align="end">
+          <Base.Vertical>
+            <Base.Text size="large" family="BarlowCondensedLight" style={{ color: Theme.ColorWin }}>
               {mock.win}
-            </s.Text>
+            </Base.Text>
             <Base.Seperator />
-            <s.Label>Win</s.Label>
-          </s.Vertical>
-          <s.Vertical align="center">
-            <s.Text family={FontFamily.BarlowCondensedLight} style={{ color: Theme.ColorLost }}>
+            <Base.Label>Win</Base.Label>
+          </Base.Vertical>
+          <Base.Vertical align="center">
+            <Base.Text size="large" family="BarlowCondensedLight" style={{ color: Theme.ColorLost }}>
               {mock.lost}
-            </s.Text>
+            </Base.Text>
             <Base.Seperator />
-            <s.Label>Lost</s.Label>
-          </s.Vertical>
-          <s.Vertical align="end">
-            <s.Text family={FontFamily.BarlowCondensedLight}>{mock.win + mock.lost}</s.Text>
+            <Base.Label>Lost</Base.Label>
+          </Base.Vertical>
+          <Base.Vertical align="end">
+            <Base.Text size="large" family="BarlowCondensedLight">
+              {mock.win + mock.lost}
+            </Base.Text>
             <Base.Seperator />
-            <s.Label>All</s.Label>
-          </s.Vertical>
-        </s.Horizontal>
+            <Base.Label>All</Base.Label>
+          </Base.Vertical>
+        </Base.Horizontal>
       </s.Padding>
     </s.Box>
   );

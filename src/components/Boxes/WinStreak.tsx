@@ -1,7 +1,5 @@
 import React, { memo } from "react";
 
-import { FontFamily, FontSize } from "../../constants/System";
-import Theme from "../../constants/Theme";
 import * as Base from "../../shareds/Base";
 
 import * as s from "./styles";
@@ -16,22 +14,27 @@ function Component(p: Partial<BoxProps>) {
   return (
     <s.Box {...p}>
       <s.Padding>
-        <s.Vertical align="center">
-          <s.Label>Win Streak</s.Label>
-        </s.Vertical>
+        <Base.Vertical align="center">
+          <Base.Label>Win Streak</Base.Label>
+        </Base.Vertical>
         <Base.Seperator />
-        <s.Horizontal>
-          <s.Vertical align="center">
-            <s.Text family={FontFamily.BarlowCondensedLight}>{mock.current}</s.Text>
+        <Base.Horizontal>
+          <Base.Vertical align="center">
+            <Base.Text family="BarlowCondensedLight" size="medium">
+              {mock.current}
+            </Base.Text>
             <Base.Seperator />
-            <s.Label>Current</s.Label>
-          </s.Vertical>
-          <s.Vertical align="center">
-            <s.Text family={FontFamily.BarlowCondensedLight}>{mock.longest}</s.Text>
+            <Base.Label>Current</Base.Label>
+          </Base.Vertical>
+          <Base.Seperator vertical />
+          <Base.Vertical align="center">
+            <Base.Text family="BarlowCondensedLight" size="medium">
+              {mock.longest}
+            </Base.Text>
             <Base.Seperator />
-            <s.Label>Longest</s.Label>
-          </s.Vertical>
-        </s.Horizontal>
+            <Base.Label>Longest</Base.Label>
+          </Base.Vertical>
+        </Base.Horizontal>
       </s.Padding>
     </s.Box>
   );

@@ -4,10 +4,10 @@ import SearchBox from "../components/SearchBox";
 import * as Screen from "../shareds/Screen";
 
 export default () => (
-  <Screen.Wrapper>
+  <Screen.WrapperWithKeyboard>
     <Screen.Status />
     <Screen.Content>
       <SearchBox isFocused />
     </Screen.Content>
-  </Screen.Wrapper>
+  </Screen.WrapperWithKeyboard>
 );
