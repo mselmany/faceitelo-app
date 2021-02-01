@@ -10,6 +10,7 @@ import { ViewProps } from "./index";
 
 function View(p: ViewProps) {
   const theme = useTheme();
+
   return (
     <s.Box>
       <s.Padding>
@@ -38,7 +39,12 @@ function View(p: ViewProps) {
 
 export default memo(View);
 
-const ListItem = ({ p, item }: { p: any; item: IPlayer }) => (
+type ListItemProps = {
+  p: Pick<ViewProps, "onSelect">;
+  item: IPlayer;
+};
+
+const ListItem = ({ p, item }: ListItemProps) => (
   <s.ListItem onPress={() => p.onSelect(item)}>
     <s.Avatar
       source={{
@@ -51,12 +57,7 @@ const ListItem = ({ p, item }: { p: any; item: IPlayer }) => (
       </Base.Text>
       <s.Infos>
         <s.Info>Level {item.skill_level}</s.Info>
-        {item.verified && (
-          <>
-            <s.Info> • </s.Info>
-            <s.Info>Verified</s.Info>
-          </>
-        )}
+        {item.verified && <s.Info> • Verified</s.Info>}
       </s.Infos>
     </Base.Vertical>
   </s.ListItem>

@@ -7,24 +7,20 @@ import { FontSize, FontFamily, Space } from "../constants/System";
 
 const { version, name, description } = appJson.expo;
 
-function Component(p: any) {
-  return (
-    <Container>
-      <Base.Horizontal>
-        <Title family="Prompt">{name}</Title>
-        <Version>
-          <VersionText>Beta</VersionText>
-          <VersionText opacity=".5"> • {version}</VersionText>
-        </Version>
-      </Base.Horizontal>
-      <Base.Text family="RubikLight" size="normal" color="Color50">
-        {description}
-      </Base.Text>
-    </Container>
-  );
-}
-
-export default memo(Component);
+export default memo((p: any) => (
+  <Container>
+    <Base.Horizontal>
+      <Title family="Prompt">{name}</Title>
+      <Version>
+        <VersionText>Beta</VersionText>
+        <VersionText opacity=".5"> • {version}</VersionText>
+      </Version>
+    </Base.Horizontal>
+    <Base.Text family="RubikLight" size="normal" color="Color50">
+      {description}
+    </Base.Text>
+  </Container>
+));
 
 const Container = styled(Base.Vertical)`
   padding: ${(+Space.screenPadding * 2).toString()}px;

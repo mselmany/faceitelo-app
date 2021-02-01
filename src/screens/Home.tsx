@@ -24,19 +24,26 @@ export default () => {
 
   const navigation = useNavigation();
 
-  const openSearch = useCallback(() => {
+  const navigateSearch = useCallback(() => {
     navigation.navigate("Search");
   }, [navigation]);
+
+  const onPlayerSelect = useCallback(
+    (player: IPlayer) => {
+      navigation.navigate("Overview", { player });
+    },
+    [navigation]
+  );
 
   return (
     <Screen.Wrapper>
       <Screen.Content>
         <AppHead />
-        <SearchBoxPlaceholder onPress={openSearch} />
+        <SearchBoxPlaceholder onPress={navigateSearch} />
         <Footer>
-          <PlayerList label="Favorites" players={players} />
+          <PlayerList label="Favorites" players={players} onPress={onPlayerSelect} />
           <Base.Seperator ratio="2" />
-          <PlayerList label="Recent Searches" players={players} />
+          <PlayerList label="Recent Searches" players={players} onPress={onPlayerSelect} />
         </Footer>
       </Screen.Content>
     </Screen.Wrapper>

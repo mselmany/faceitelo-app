@@ -20,6 +20,7 @@ export const Input = styled(Base.TextInput)`
   font-size: ${FontSize.xlarge}px;
 `;
 
+// @TODO FlatList type lerini viewdan verilebilecek şekilde generic hale getir
 export const FlatList = styled(_Flatlist as new () => _Flatlist<IPlayer>)`
   display: flex;
   flex-direction: column;

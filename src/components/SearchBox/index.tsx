@@ -15,7 +15,7 @@ export interface ViewProps extends Props {
   list: IPlayer[];
   text?: string;
   onChangeText: (text: string) => void;
-  onSelect: (user: IPlayer) => void;
+  onSelect: (player: IPlayer) => void;
 }
 
 function Controller(p: Props) {
