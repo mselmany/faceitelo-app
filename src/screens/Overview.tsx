@@ -3,9 +3,9 @@ import { useNavigation } from "@react-navigation/native";
 
 import Api from "../services/Api";
 import * as Screen from "../shareds/Screen";
-import { IPlayer } from "../typings/types";
+import { IPlayer } from "../@types/types";
 import PlayerInfo from "../components/PlayerInfo";
-import Buttons, { IButton } from "../shareds/Button";
+import Buttons, { IButton } from "../components/Button";
 import * as Boxes from "../components/Boxes/styles";
 import Elo from "../components/Boxes/Elo";
 import LastEloRatios from "../components/Boxes/LastEloRatios";
@@ -24,6 +24,7 @@ export default ({ route }: Props) => {
   const [player, setPlayer] = useState<IPlayer | undefined>(_player);
 
   console.log(player);
+
   useEffect(() => {
     if (_player) {
       return;
@@ -33,7 +34,7 @@ export default ({ route }: Props) => {
 
       setPlayer(data[0]);
     })();
-  }, []);
+  }, [_player]);
 
   const buttons = useMemo<IButton[]>(
     () => [

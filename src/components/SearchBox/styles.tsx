@@ -3,7 +3,7 @@ import { FlatList as _Flatlist } from "react-native";
 
 import { FontFamily, FontSize, Radius, Space } from "../../constants/System";
 import * as Base from "../../shareds/Base";
-import { IPlayer } from "../../typings/types";
+import { IPlayer } from "../../@types/types";
 
 export const Box = styled(Base.Box)`
   flex: 0 1 auto;

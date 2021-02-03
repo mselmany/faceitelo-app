@@ -8,7 +8,7 @@ import Api from "../services/Api";
 import { Space } from "../constants/System";
 import * as Screen from "../shareds/Screen";
 import PlayerList from "../components/PlayerList";
-import { IPlayer } from "../typings/types";
+import { IPlayer } from "../@types/types";
 import * as Base from "../shareds/Base";
 
 export default () => {

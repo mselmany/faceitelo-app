@@ -3,7 +3,7 @@ import styled from "@emotion/native";
 
 import * as Base from "../shareds/Base";
 import { FontFamily, FontSize, Space } from "../constants/System";
-import { IPlayer } from "../typings/types";
+import { IPlayer } from "../@types/types";
 
 interface Props {
   player: IPlayer;

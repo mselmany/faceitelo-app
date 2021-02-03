@@ -1,5 +1,4 @@
-import React, { useMemo } from "react";
-import { PressableProps, ViewProps } from "react-native";
+import React, { ReactNode, useMemo } from "react";
 import styled from "@emotion/native";
 import { Theme } from "@emotion/react";
 
@@ -39,18 +38,13 @@ export const Group = (p: any) => {
   return <BoxGroup>{childrens}</BoxGroup>;
 };
 
-type _BoxProps = {
+export type BoxProps = {
   solid?: boolean;
   nth?: "odd" | "even";
   index?: number;
-  noPadding?: boolean;
-} & { children: any };
+} & { children: ReactNode };
 
-export type BoxProps = _BoxProps & ViewProps;
-
-export type PressableBoxProps = _BoxProps & PressableProps;
-
-const boxStyles = (p: _BoxProps & { theme: Theme }) => `
+const boxStyles = (p: BoxProps & { theme: Theme }) => `
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -66,7 +60,7 @@ const boxStyles = (p: _BoxProps & { theme: Theme }) => `
 
 export const Box = styled.View<BoxProps>(boxStyles);
 
-export const PressableBox = styled.Pressable<PressableBoxProps>(boxStyles);
+export const PressableBox = styled.Pressable<BoxProps>(boxStyles);
 
 export const Padding = styled.View`
   display: flex;

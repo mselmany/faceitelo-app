@@ -2,7 +2,7 @@ import React, { memo } from "react";
 import { ListRenderItemInfo } from "react-native";
 import styled from "@emotion/native";
 
-import { IPlayer } from "../typings/types";
+import { IPlayer } from "../@types/types";
 import { FontSize, Space } from "../constants/System";
 import * as Base from "../shareds/Base";
 

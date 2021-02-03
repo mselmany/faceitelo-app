@@ -2,7 +2,7 @@ import React, { memo } from "react";
 import { useTheme } from "@emotion/react";
 
 import * as Base from "../../shareds/Base";
-import { IPlayer } from "../../typings/types";
+import { IPlayer } from "../../@types/types";
 
 import * as s from "./styles";
 

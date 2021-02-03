@@ -1,8 +1,8 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { useNavigation } from "@react-navigation/native";
+import { StackActions, useNavigation } from "@react-navigation/native";
 
 import Api from "../../services/Api";
-import { IPlayer } from "../../typings/types";
+import { IPlayer } from "../../@types/types";
 import useDebounce from "../../utils/useDebounce";
 
 import View from "./view";
@@ -35,7 +35,7 @@ function Controller(p: Props) {
 
   const onSelect = useCallback(
     (player: IPlayer) => {
-      navigation.navigate("Overview", { player });
+      navigation.dispatch(StackActions.push("Overview", { player }));
     },
     [navigation]
   );

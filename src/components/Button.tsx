@@ -2,17 +2,18 @@ import React, { memo, ReactChildren, useCallback, useState } from "react";
 import styled from "@emotion/native";
 
 import { Space, Radius, FontSize, FontFamily } from "../constants/System";
+import * as Base from "../shareds/Base";
 
-export interface IButton {
+export type IButton = {
   text: string;
   value: string;
   isActive?: boolean;
-}
+};
 
-interface Props {
+type Props = {
   list: IButton[];
   onPress: (button: IButton) => void;
-}
+};
 
 const Buttons = (p: Props) => {
   const [buttons, setButtons] = useState<IButton[]>(() => p.list);
@@ -31,12 +32,12 @@ const Buttons = (p: Props) => {
 
       p.onPress(button);
     },
-    [p]
+    [p.onPress]
   );
 
   return (
     <Container>
-      <Scroll horizontal showsHorizontalScrollIndicator={false}>
+      <Scroll horizontal>
         {buttons.map((button, index) => (
           <Button
             key={button.value}
@@ -68,19 +69,21 @@ export const Container = styled.View`
 export const Scroll = styled.ScrollView`
   display: flex;
   flex-direction: row;
-  flex-basis: auto;
-  flex-grow: 0;
+  flex: 0 1 auto;
   border-radius: ${Radius.normal}px;
 `;
 
-Scroll.defaultProps = { contentContainerStyle: { alignItems: "center" } };
+Scroll.defaultProps = {
+  contentContainerStyle: { alignItems: "center" },
+  showsHorizontalScrollIndicator: false,
+};
 
-interface ButtonProps {
+type ButtonProps = {
   children: ReactChildren | string;
   onPress: () => void;
   isActive?: boolean;
   isLast?: boolean;
-}
+};
 
 export const Button = (p: ButtonProps) => (
   <>
@@ -101,9 +104,7 @@ const ButtonItem = styled.TouchableOpacity<{ isActive?: boolean }>`
   background-color: ${({ theme, isActive }) => (isActive ? theme.Color10 : "transparent")};
 `;
 
-const Text = styled.Text<{ isActive?: boolean }>`
-  font-size: ${FontSize.small}px;
-  font-family: ${FontFamily.Rubik};
+const Text = styled(Base.Text)<{ isActive?: boolean }>`
   color: ${({ theme, isActive }) => (isActive ? theme.Color75 : theme.Color50)};
 `;
 
