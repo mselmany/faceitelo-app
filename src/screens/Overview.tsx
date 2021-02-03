@@ -16,25 +16,22 @@ import Ban from "../components/Boxes/Ban";
 import LastMatchesTable from "../components/Boxes/LastMatchesTable";
 
 interface Props {
-  route: { params: { player: IPlayer } };
+  route: { params: { nicknameOrId: string } };
 }
 
 export default ({ route }: Props) => {
-  const { params: { player: _player } = {} } = route;
-  const [player, setPlayer] = useState<IPlayer | undefined>(_player);
+  const { params: { nicknameOrId = "JW-JW" } = {} } = route;
+  const [player, setPlayer] = useState<IPlayer>(null);
 
-  console.log(player);
+  console.log({ player, nicknameOrId });
 
   useEffect(() => {
-    if (_player) {
-      return;
-    }
     (async () => {
-      const data = await Api.players();
+      const data = await Api.player(nicknameOrId);
 
-      setPlayer(data[0]);
+      setPlayer(data);
     })();
-  }, [_player]);
+  }, [nicknameOrId]);
 
   const buttons = useMemo<IButton[]>(
     () => [

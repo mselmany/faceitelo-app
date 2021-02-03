@@ -6,7 +6,7 @@ import { FontFamily, FontSize, Space } from "../constants/System";
 import { IPlayer } from "../@types/types";
 
 interface Props {
-  player: IPlayer;
+  player: IPlayer | null;
 }
 
 export default memo(

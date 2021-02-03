@@ -17,16 +17,34 @@ class Api {
   }
 
   async players(_nickname?: string): Promise<IPlayer[]> {
-    const players: IPlayer[] = this.player_search
-      .filter((player) =>
-        !_nickname ? true : player.nickname.toLocaleLowerCase("en").includes(_nickname.toLocaleLowerCase("en"))
-      )
-      .map((player: any) => {
-        const { player_id, nickname, games, country, verified, avatar } = player;
-        const { skill_level } = games.find((item: any) => item.name === "csgo");
-        return { player_id, nickname, skill_level, country, verified, avatar };
-      });
-    return players;
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        const players: IPlayer[] = this.player_search
+          .filter((player) =>
+            !_nickname ? true : player.nickname.toLocaleLowerCase("en").includes(_nickname.toLocaleLowerCase("en"))
+          )
+          .map((player: any) => {
+            const { player_id, nickname, games, country, verified, avatar } = player;
+            const { skill_level } = games.find((item: any) => item.name === "csgo");
+            return { player_id, nickname, skill_level, country, verified, avatar };
+          });
+        resolve(players);
+      }, 500);
+    });
+  }
+
+  async player(nicknameOrId: string): Promise<IPlayer | null> {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        const player = this.player_search.find((player) => [player.nickname, player.player_id].includes(nicknameOrId));
+        if (player) {
+          const { player_id, nickname, games, country, verified, avatar } = player;
+          const { skill_level } = games.find((item: any) => item.name === "csgo");
+          resolve({ player_id, nickname, skill_level, country, verified, avatar });
+        }
+        reject(new Error("No player found."));
+      }, 1000);
+    });
   }
 }
 

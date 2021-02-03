@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
 import styled from "@emotion/native";
-import { useNavigation } from "@react-navigation/native";
+import { StackActions, useNavigation } from "@react-navigation/native";
 
 import AppHead from "../components/AppHead";
 import SearchBoxPlaceholder from "../components/SearchBoxPlaceholder";
@@ -30,7 +30,7 @@ export default () => {
 
   const onPlayerSelect = useCallback(
     (player: IPlayer) => {
-      navigation.navigate("Overview", { player });
+      navigation.dispatch(StackActions.push("Overview", { nicknameOrId: player?.player_id }));
     },
     [navigation]
   );
