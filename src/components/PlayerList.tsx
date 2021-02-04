@@ -17,7 +17,7 @@ export default memo((p: Props) => (
     <Label>
       {p.label} {p.players?.length ? `• ${p.players?.length}` : ""}
     </Label>
-    <Base.Seperator />
+    <Base.Seperator ratio="2" />
     {/* @TODO flatliste type parametresi nasıl verilir araştır */}
     <Base.HorizontalFlatlist
       data={p.players}

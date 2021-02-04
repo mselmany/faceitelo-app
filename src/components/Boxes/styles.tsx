@@ -1,4 +1,4 @@
-import React, { ReactNode, useMemo } from "react";
+import React, { ReactElement, ReactNode, useMemo } from "react";
 import styled from "@emotion/native";
 import { Theme } from "@emotion/react";
 
@@ -12,10 +12,10 @@ export const Container = styled.View`
   width: 100%;
   max-width: 480px;
   flex: 1 1 auto;
-  padding: ${Space.screenPadding}px;
+  padding: 0 ${Space.screenPadding}px;
 `;
 
-const BoxGroup = styled.View`
+const BoxGroup = styled.View<{ noPadding?: boolean }>`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -23,10 +23,10 @@ const BoxGroup = styled.View`
   flex: 1;
   flex-basis: auto;
   flex-wrap: nowrap;
-  padding-top: ${Space.screenPadding}px;
+  ${({ noPadding = false }) => (!noPadding ? `padding-top: ${Space.screenPadding}px;` : "")};
 `;
 
-export const Group = (p: any) => {
+export const Group = (p: { noPadding?: boolean; children: any }) => {
   const childrens = useMemo(
     () =>
       React.Children.map(p.children, (child, index) =>
@@ -35,7 +35,7 @@ export const Group = (p: any) => {
     [p.children]
   );
 
-  return <BoxGroup>{childrens}</BoxGroup>;
+  return <BoxGroup {...p}>{childrens}</BoxGroup>;
 };
 
 export type BoxProps = {

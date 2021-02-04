@@ -35,7 +35,7 @@ function Controller(p: Props) {
 
   const onSelect = useCallback(
     (player: IPlayer) => {
-      navigation.dispatch(StackActions.push("Overview", { nicknameOrId: player?.player_id }));
+      navigation.navigate("Overview", { nicknameOrId: player?.player_id });
     },
     [navigation]
   );

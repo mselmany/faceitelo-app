@@ -30,7 +30,7 @@ export default () => {
 
   const onPlayerSelect = useCallback(
     (player: IPlayer) => {
-      navigation.dispatch(StackActions.push("Overview", { nicknameOrId: player?.player_id }));
+      navigation.navigate("Overview", { nicknameOrId: player?.player_id });
     },
     [navigation]
   );
@@ -41,9 +41,7 @@ export default () => {
         <AppHead />
         <SearchBoxPlaceholder onPress={navigateSearch} />
         <Footer>
-          <PlayerList label="Favorites" players={players} onPress={onPlayerSelect} />
-          <Base.Seperator ratio="2" />
-          <PlayerList label="Recent Searches" players={players} onPress={onPlayerSelect} />
+          <PlayerList label="Favorites & Recent Searches" players={players} onPress={onPlayerSelect} />
         </Footer>
       </Screen.Content>
     </Screen.Wrapper>
