@@ -1,21 +1,25 @@
+import React from "react";
 import styled from "@emotion/native";
 import { Theme } from "@emotion/react";
+import { Pressable, PressableProps } from "react-native";
 
 import { Space, Radius, FontSize, FontFamily } from "../constants/System";
 
-const boxStyles = (p: { theme: Theme }) => `
+const boxStyles = (p: { theme: Theme } & { pressed: boolean }) => `
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: stretch;
-  background-color: ${p.theme.BackgroundComponent};
+  background-color: ${p.pressed ? p.theme.BackgroundComponent__Contrast : p.theme.BackgroundComponent};
   padding: ${Space.normal}px;
   border-radius: ${Radius.large}px;
 `;
 
 export const Box = styled.View(boxStyles);
 
-export const PressableBox = styled.Pressable(boxStyles);
+export const PressableBox = (p: PressableProps) => (
+  <Pressable onPress={p.onPress}>{({ pressed }) => <Box {...p} pressed={pressed} />}</Pressable>
+);
 
 export const Seperator = styled.View<{ vertical?: boolean; ratio?: number | string }>`
   display: flex;
